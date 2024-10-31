@@ -1,0 +1,11 @@
+@use '/src/styles/main.scss' as *;
+
+.sidebar {
+  background-color: $white;
+  grid-row: 2 / -1;
+  grid-column: 1 / 2;
+  height: calc(100vh - toRem(100));
+
+  box-shadow: toRem(0) toRem(5) toRem(20) toRem(0) $header-shadow;
+  z-index: 1;
+}

@@ -1,0 +1,27 @@
+@use '/src/styles/main.scss' as *;
+
+.switch {
+  width: fit-content;
+  padding-left: toRem(30);
+  cursor: pointer;
+  @include flex(center, center, toRem(8));
+
+  &__briefcase {
+    width: toRem(16);
+    height: toRem(16);
+  }
+
+  &__text {
+    font-family: $font-work-sans;
+    font-size: toRem(16);
+    font-weight: 400;
+    line-height: toRem(18.77);
+    margin-left: toRem(2);
+    color: $primary-dark-blue;
+  }
+
+  &__dropdown {
+    width: toRem(14);
+    height: toRem(14);
+  }
+}

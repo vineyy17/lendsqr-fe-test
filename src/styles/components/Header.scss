@@ -8,6 +8,109 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
   box-shadow: toRem(3) toRem(0) toRem(20) toRem(0) $header-shadow;
   z-index: 1;
+  padding-left: toRem(30);
+  padding-right: toRem(60);
+
+  &__left {
+    @include flex(center, center, toRem(168.2));
+    &__logo {
+      width: toRem(144.8);
+      height: toRem(30);
+    }
+
+    &__searchWrapper {
+      width: toRem(400);
+      height: toRem(40);
+      @include flex(center, center, toRem(0));
+
+      &__input {
+        box-sizing: border-box;
+        width: toRem(344);
+        height: toRem(40);
+        border: toRem(1) solid rgba($primary-dark-blue, 0.2);
+        padding-left: toRem(20);
+        outline: none;
+        border-top-left-radius: toRem(8);
+        border-bottom-left-radius: toRem(8);
+        border-right: none;
+
+        font-family: $font-work-sans;
+        font-size: toRem(14);
+        font-weight: 400;
+        line-height: toRem(16.42);
+        color: $primary-dark-blue;
+        font-family: $font-work-sans;
+
+        &::placeholder {
+          font-family: $font-work-sans;
+          font-size: toRem(14);
+          font-weight: 400;
+          line-height: toRem(16.42);
+          color: rgba($primary-dark-blue, 0.7);
+        }
+      }
+
+      &__search {
+        width: toRem(56);
+        height: toRem(40);
+        border-bottom-right-radius: toRem(8);
+        border-top-right-radius: toRem(8);
+        border: none;
+        background-color: $primary-aqua;
+        @include flex(center, center, 0);
+        cursor: pointer;
+        &__icon {
+          width: toRem(14);
+          height: toRem(14);
+        }
+      }
+    }
+  }
+
+  &__info {
+    @include flex(center, center, toRem(0));
+
+    &__docs {
+      font-family: $font-roboto;
+      font-size: toRem(16);
+      font-weight: 400;
+      line-height: toRem(18.75);
+      color: $primary-dark-blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    &__notification {
+      width: toRem(26);
+      height: toRem(26);
+      margin-left: toRem(47);
+    }
+
+    &__profile {
+      width: toRem(48);
+      height: toRem(48);
+      margin-left: toRem(30);
+    }
+
+    &__name {
+      @include flex(center, center, toRem(4));
+      margin-left: toRem(10);
+      cursor: pointer;
+      &__text {
+        font-family: $font-work-sans;
+        font-size: toRem(16);
+        font-weight: 500;
+        line-height: toRem(18.77);
+        color: $primary-dark-blue;
+      }
+
+      &__drop {
+        width: toRem(20);
+        height: toRem(20);
+      }
+    }
+  }
 }

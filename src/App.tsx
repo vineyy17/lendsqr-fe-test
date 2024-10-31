@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import AppLayout from './pages/AppLayout';
 import Users from './pages/Users';
@@ -10,8 +10,9 @@ function App() {
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="/" element={<AppLayout />}>
-          <Route index path="users" element={<Users />} />
-          <Route index path="users/:userId" element={<UserDetails />} />
+          <Route index element={<Navigate replace to="users" />} />
+          <Route path="users" element={<Users />} />
+          <Route path="users/:userId" element={<UserDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>

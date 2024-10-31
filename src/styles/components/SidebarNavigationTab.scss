@@ -1,0 +1,26 @@
+@use '/src/styles/main.scss' as *;
+
+.sidebarNav {
+  width: 100%;
+  height: toRem(40);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__wrapper {
+    padding-left: toRem(30);
+    @include flex(center, center, toRem(10));
+
+    &__icon {
+      opacity: 40%;
+    }
+
+    &__text {
+      font-family: $font-work-sans;
+      font-size: toRem(16);
+      font-weight: 400;
+      line-height: toRem(18.77);
+      color: rgba($primary-dark-blue, 0.6);
+    }
+  }
+}

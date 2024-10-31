@@ -2,6 +2,7 @@ import '../styles/pages/Login.scss';
 import loginImage from '../assets/images/login-image.webp';
 import logo from '../assets/icons/logo-large.svg';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -49,9 +50,11 @@ const Login = () => {
             <p className="login__right__wrapper__form__forgotPassword">
               Forgot Password
             </p>
-            <button className="login__right__wrapper__form__button">
-              Log In
-            </button>
+            <Link to="/users">
+              <button className="login__right__wrapper__form__button">
+                Log In
+              </button>
+            </Link>
           </div>
         </div>
       </div>

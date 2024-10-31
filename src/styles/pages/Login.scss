@@ -1,1 +1,162 @@
 @use '/src/styles/main.scss' as *;
+
+.login {
+  min-height: 100vh;
+  min-width: 100%;
+  @include flex(center, center, 0);
+
+  &__left {
+    width: 50%;
+    height: 100vh;
+    position: relative;
+    background-color: $light-grey;
+    @include flex(center, center, 0);
+
+    &__logo {
+      position: absolute;
+      left: toRem(97);
+      top: toRem(76);
+      width: toRem(173.76);
+      height: toRem(36);
+    }
+
+    &__image {
+      width: toRem(600);
+      height: toRem(337.57);
+      margin-top: toRem(65);
+    }
+  }
+
+  &__right {
+    width: 50%;
+    height: 100%;
+    background-color: $white;
+    @include flex(center, center, 0);
+
+    &__wrapper {
+      width: toRem(447);
+      height: fit-content;
+      @include flex_col(toRem(60));
+
+      &__info {
+        @include flex_col(toRem(10));
+
+        &__topText {
+          font-family: $font-avenir;
+          font-size: toRem(40);
+          font-weight: 700;
+          line-height: toRem(54.64);
+          letter-spacing: -0.04em;
+          text-align: left;
+          color: $primary-dark-blue;
+        }
+
+        &__bottomText {
+          font-family: $font-avenir;
+          font-size: toRem(20);
+          font-weight: 400;
+          line-height: toRem(27.32);
+          text-align: left;
+          color: $accent-dark-blue;
+        }
+      }
+
+      &__form {
+        @include flex_col(toRem(24));
+
+        &__inputWrapper {
+          position: relative;
+          width: fit-content;
+          height: fit-content;
+
+          &__text {
+            position: absolute;
+            top: toRem(18);
+            right: toRem(17.64);
+            font-family: $font-avenir;
+            font-size: toRem(12);
+            font-weight: 600;
+            line-height: toRem(16.39);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+
+            color: $primary-aqua;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              color: $hover-aqua;
+            }
+          }
+        }
+
+        &__input {
+          box-sizing: border-box;
+          outline: none;
+          width: toRem(447);
+          height: toRem(50);
+          border-radius: toRem(5);
+          border: toRem(2) solid rgba(84, 95, 125, 0.15);
+          padding-left: toRem(12);
+
+          font-family: $font-avenir;
+          font-size: toRem(14);
+          font-weight: 400;
+          line-height: toRem(19.12);
+          text-align: left;
+          color: $accent-dark-blue;
+
+          &::placeholder {
+            font-family: $font-avenir;
+            font-size: toRem(14);
+            font-weight: 400;
+            line-height: toRem(19.12);
+            text-align: left;
+            color: rgba($accent-dark-blue, 0.6);
+          }
+        }
+
+        &__forgotPassword {
+          font-family: $font-avenir;
+          font-size: toRem(12);
+          font-weight: 600;
+          line-height: toRem(16.39);
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: $primary-aqua;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: $hover-aqua;
+          }
+        }
+
+        &__button {
+          margin-top: toRem(6);
+          width: 100%;
+          height: toRem(48);
+          border-radius: toRem(8);
+          outline: none;
+          background-color: $primary-aqua;
+          cursor: pointer;
+          border: none;
+
+          font-family: $font-avenir;
+          font-size: toRem(14);
+          font-weight: 600;
+          line-height: toRem(19.12);
+          letter-spacing: 0.1em;
+          text-align: center;
+          color: $white;
+          text-transform: uppercase;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            background-color: $hover-aqua;
+          }
+        }
+      }
+    }
+  }
+}

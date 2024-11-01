@@ -1,0 +1,42 @@
+@use '/src/styles/main.scss' as *;
+
+.statsCard {
+  box-sizing: border-box;
+  width: toRem(240);
+  height: toRem(160);
+  border: toRem(1) solid rgba($primary-dark-blue, 0.06);
+  background-color: $white;
+  box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;
+  padding-top: toRem(20);
+  padding-left: toRem(30);
+  padding-bottom: toRem(30);
+
+  &__inner {
+    @include flex_col(toRem(12));
+
+    &__icon {
+      width: toRem(40);
+      height: toRem(40);
+    }
+
+    &__name {
+      margin-top: toRem(2);
+      font-family: $font-work-sans;
+      font-size: toRem(14);
+      font-weight: 500;
+      line-height: toRem(16.42);
+      text-align: left;
+      color: $accent-dark-blue;
+      text-transform: uppercase;
+    }
+
+    &__digit {
+      font-family: $font-work-sans;
+      font-size: toRem(24);
+      font-weight: 600;
+      line-height: toRem(28.15);
+      text-align: left;
+      color: $primary-dark-blue;
+    }
+  }
+}

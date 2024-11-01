@@ -1,5 +1,9 @@
 @use '/src/styles/main.scss' as *;
 
+.switchWrapper {
+  height: toRem(61);
+}
+
 .switch {
   width: fit-content;
   padding-left: toRem(30);

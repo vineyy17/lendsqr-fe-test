@@ -4,18 +4,20 @@ import briefcaseIcon from '../assets/icons/briefcase.svg';
 
 const SwitchOrganizationOption = () => {
   return (
-    <div className="switch">
-      <img
-        src={briefcaseIcon}
-        alt="briefcase icon"
-        className="switch__briefcase"
-      />
-      <p className="switch__text">Switch Organization</p>
-      <img
-        src={switchDropDown}
-        alt="dropdown icon"
-        className="switch__dropdown"
-      />
+    <div className="switchWrapper">
+      <div className="switch">
+        <img
+          src={briefcaseIcon}
+          alt="briefcase icon"
+          className="switch__briefcase"
+        />
+        <p className="switch__text">Switch Organization</p>
+        <img
+          src={switchDropDown}
+          alt="dropdown icon"
+          className="switch__dropdown"
+        />
+      </div>
     </div>
   );
 };

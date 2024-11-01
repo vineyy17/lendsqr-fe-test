@@ -1,0 +1,81 @@
+@use '/src/styles/main.scss' as *;
+
+.filterDate {
+  width: 100%;
+  height: fit-content;
+  position: relative;
+
+  &__input {
+    width: 100%;
+    height: toRem(40);
+    border-radius: toRem(8);
+    border: toRem(1) solid rgba($primary-dark-blue, 0.2);
+    background-color: $white;
+    padding-left: toRem(20);
+    outline: none;
+    cursor: pointer;
+
+    font-family: $font-work-sans;
+    font-size: toRem(14);
+    font-weight: 400;
+    line-height: toRem(16.42);
+    text-align: left;
+    color: rgba($accent-dark-blue, 1);
+
+    &::placeholder {
+      font-family: $font-work-sans;
+      font-size: toRem(14);
+      font-weight: 400;
+      line-height: toRem(16.42);
+      text-align: left;
+      color: rgba($accent-dark-blue, 0.7);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: toRem(12);
+    right: toRem(20);
+    width: toRem(16);
+    height: toRem(16);
+    cursor: pointer;
+  }
+
+  &__pickerWrapper {
+    position: absolute;
+    top: toRem(50);
+    left: 0;
+    z-index: 10;
+  }
+
+  &__datePicker {
+    background-color: $white;
+    border: toRem(1) solid rgba($primary-dark-blue, 0.2);
+    border-radius: toRem(8);
+    box-shadow: 0 toRem(4) toRem(12) rgba(0, 0, 0, 0.1);
+    padding: toRem(10);
+  }
+
+  .react-datepicker {
+    font-family: $font-work-sans;
+    font-size: toRem(14);
+    border: toRem(1) solid rgba($primary-dark-blue, 0.2);
+    box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;
+
+    .react-datepicker__header {
+      background-color: rgba($accent-dark-blue, 0.1);
+      color: $black;
+      border-bottom: toRem(1) solid rgba($primary-dark-blue, 0.1);
+    }
+    .react-datepicker__day--selected,
+    .react-datepicker__day--keyboard-selected {
+      background-color: rgba($accent-dark-blue, 0.1);
+      color: $black;
+    }
+  }
+}
+
+h2.react-datepicker__current-month {
+  font-family: $font-avenir;
+  font-weight: 600;
+}

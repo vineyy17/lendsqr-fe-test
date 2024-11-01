@@ -1,7 +1,7 @@
 import UsersStatsCard from '../components/UsersStatsCard';
 import '../styles/pages/Users.scss';
 import usersIcon from '../assets/icons/usersCircle.svg';
-import activeUsersIcon from '../assets/icons/activeUsersCircle.svg';
+import activeUsersIcon from '../assets/images/activeUsersCircle.png';
 import usersWithSavingsIcon from '../assets/icons/usersWithSavingsCircle.svg';
 import usersWithLoanIcon from '../assets/icons/usersWithLoansCircle.svg';
 import UsersTable from '../components/UsersTable';
@@ -18,13 +18,13 @@ const Users = () => {
           stat="2453"
         />
         <UsersStatsCard
-          name="Users With Savings"
-          icon={usersWithSavingsIcon}
+          name="Users With Loans"
+          icon={usersWithLoanIcon}
           stat="12,453"
         />
         <UsersStatsCard
-          name="Users With Loans"
-          icon={usersWithLoanIcon}
+          name="Users With Savings"
+          icon={usersWithSavingsIcon}
           stat="102,453"
         />
       </div>

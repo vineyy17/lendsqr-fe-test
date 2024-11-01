@@ -1,0 +1,89 @@
+@use '/src/styles/main.scss' as *;
+
+.tableRow {
+  height: toRem(63);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: toRem(1) solid rgba($primary-dark-blue, 0.1);
+
+  &--last {
+    border-bottom: none;
+  }
+
+  &__row {
+    @include flex(flex-start, center, toRem(35));
+
+    &__text {
+      font-family: $font-work-sans;
+      font-size: toRem(14);
+      font-weight: 400;
+      line-height: toRem(16.42);
+      color: $accent-dark-blue;
+
+      &--org {
+        width: toRem(116);
+      }
+
+      &--name {
+        width: toRem(106);
+      }
+
+      &--email {
+        width: toRem(147);
+      }
+
+      &--phone {
+        width: toRem(124);
+      }
+
+      &--date {
+        width: toRem(154);
+      }
+    }
+
+    &__userStatusWrapper {
+      width: toRem(100);
+    }
+
+    &__userStatus {
+      width: fit-content;
+      height: toRem(30);
+      border-radius: toRem(100);
+      padding: toRem(7) toRem(12);
+      padding-bottom: toRem(6);
+
+      font-family: $font-work-sans;
+      font-size: toRem(14);
+      font-weight: 400;
+      line-height: toRem(16.42);
+      text-align: center;
+
+      &--active {
+        background-color: rgba($primary-aqua, 0.06);
+        color: $primary-aqua;
+      }
+
+      &--pending {
+        background-color: rgba($pending-yellow, 0.06);
+        color: $pending-yellow;
+      }
+
+      &--blacklisted {
+        background-color: rgba($sharp-red, 0.06);
+        color: $sharp-red;
+      }
+
+      &--inactive {
+        background-color: rgba($accent-dark-blue, 0.06);
+        color: $accent-dark-blue;
+      }
+    }
+
+    &__icon {
+      width: toRem(20);
+      height: toRem(20);
+      cursor: pointer;
+    }
+  }
+}

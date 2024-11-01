@@ -13,6 +13,7 @@
 
   &__row {
     @include flex(flex-start, center, toRem(35));
+    position: relative;
 
     &__text {
       font-family: $font-work-sans;
@@ -39,6 +40,52 @@
 
       &--date {
         width: toRem(154);
+      }
+    }
+
+    &__popover {
+      box-sizing: border-box;
+      width: toRem(173);
+      height: toRem(130);
+      background-color: $white;
+      border-radius: toRem(4);
+      position: absolute;
+      z-index: 100;
+      padding: toRem(20);
+      padding-bottom: toRem(22);
+      border: toRem(1) solid rgba($accent-dark-blue, 0.04);
+      box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;
+      right: toRem(-53.5);
+      top: toRem(-42.5);
+
+      @include flex_col(toRem(20));
+
+      &__wrapper {
+        @include flex(flex-start, center, toRem(8));
+        cursor: pointer;
+
+        &__viewIcon {
+          width: toRem(16);
+          height: toRem(16);
+        }
+
+        &__blacklistIcon {
+          width: toRem(14);
+          height: toRem(14);
+        }
+
+        &__activateIcon {
+          width: toRem(14);
+          height: toRem(14);
+        }
+
+        &__text {
+          font-family: $font-work-sans;
+          font-size: toRem(14);
+          font-weight: 500;
+          line-height: toRem(16.42);
+          color: $accent-dark-blue;
+        }
       }
     }
 
@@ -84,6 +131,12 @@
       width: toRem(20);
       height: toRem(20);
       cursor: pointer;
+      transition: all 0.3 ease-in-out;
+
+      &:hover {
+        border-radius: toRem(4);
+        background-color: rgba($medium-grey, 0.2);
+      }
     }
   }
 }

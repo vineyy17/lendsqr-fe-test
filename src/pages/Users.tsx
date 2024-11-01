@@ -4,6 +4,7 @@ import usersIcon from '../assets/icons/usersCircle.svg';
 import activeUsersIcon from '../assets/icons/activeUsersCircle.svg';
 import usersWithSavingsIcon from '../assets/icons/usersWithSavingsCircle.svg';
 import usersWithLoanIcon from '../assets/icons/usersWithLoansCircle.svg';
+import UsersTable from '../components/UsersTable';
 
 const Users = () => {
   return (
@@ -27,7 +28,7 @@ const Users = () => {
           stat="102,453"
         />
       </div>
-      <div></div>
+      <UsersTable />
     </div>
   );
 };

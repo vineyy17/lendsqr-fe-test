@@ -13,6 +13,8 @@
     grid-column: 2 / 3;
     grid-row: 2 / -1;
 
+    padding: toRem(60);
+
     &__container {
       max-width: toRem(1037);
       margin: 0 auto;

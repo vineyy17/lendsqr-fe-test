@@ -11,7 +11,7 @@
   &__box {
     box-sizing: border-box;
     width: toRem(270);
-    height: toRem(600);
+    height: toRem(610);
     border-radius: toRem(4);
     background-color: $white;
     border: toRem(1) solid rgba($accent-dark-blue, 0.14);
@@ -21,5 +21,59 @@
     top: toRem(10);
     z-index: 100;
     padding: toRem(30) toRem(20);
+
+    @include flex_col(toRem(20));
+
+    &__group {
+      @include flex_col(toRem(6));
+
+      &__text {
+        font-family: $font-work-sans;
+        font-size: toRem(14);
+        font-weight: 500;
+        line-height: toRem(16.42);
+        text-align: left;
+        color: $accent-dark-blue;
+      }
+    }
+
+    &__flexWrapper {
+      margin-top: toRem(10);
+      @include flex(flex-start, center, toRem(14));
+
+      &__resetButton {
+        width: toRem(98);
+        height: toRem(40);
+        border: toRem(1) solid $accent-dark-blue;
+        border-radius: toRem(8);
+        outline: none;
+        background-color: $white;
+
+        font-family: $font-work-sans;
+        font-size: toRem(14);
+        font-weight: 600;
+        line-height: toRem(16.42);
+        text-align: center;
+        color: $accent-dark-blue;
+        cursor: pointer;
+      }
+
+      &__filterButton {
+        width: toRem(98);
+        height: toRem(40);
+        border: none;
+        border-radius: toRem(8);
+        outline: none;
+        background-color: $primary-aqua;
+
+        font-family: $font-work-sans;
+        font-size: toRem(14);
+        font-weight: 600;
+        line-height: toRem(16.42);
+        text-align: center;
+        color: $white;
+        cursor: pointer;
+      }
+    }
   }
 }

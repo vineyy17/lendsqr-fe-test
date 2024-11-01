@@ -1,0 +1,27 @@
+@use '/src/styles/main.scss' as *;
+
+.filterInput {
+  width: 100%;
+  height: toRem(40);
+  border-radius: toRem(8);
+  border: toRem(1) solid rgba($primary-dark-blue, 0.2);
+  background-color: $white;
+  padding-left: toRem(20);
+  outline: none;
+
+  font-family: $font-work-sans;
+  font-size: toRem(14);
+  font-weight: 400;
+  line-height: toRem(16.42);
+  text-align: left;
+  color: rgba($accent-dark-blue, 1);
+
+  &::placeholder {
+    font-family: $font-work-sans;
+    font-size: toRem(14);
+    font-weight: 400;
+    line-height: toRem(16.42);
+    text-align: left;
+    color: rgba($accent-dark-blue, 0.7);
+  }
+}

@@ -1,0 +1,48 @@
+@use '/src/styles/main.scss' as *;
+
+.filterSelect {
+  position: relative;
+  width: 100%;
+  &__input {
+    width: 100%;
+    height: toRem(40);
+    border-radius: toRem(8);
+    border: toRem(1) solid rgba($primary-dark-blue, 0.2);
+    background-color: $white;
+    padding-left: toRem(20);
+    outline: none;
+
+    font-family: $font-work-sans;
+    font-size: toRem(14);
+    font-weight: 400;
+    line-height: toRem(16.42);
+    text-align: left;
+    color: rgba($accent-dark-blue, 0.7);
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    //   padding-right: 30px !important;
+    background-color: transparent;
+    cursor: pointer;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: toRem(20);
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: toRem(14);
+    height: toRem(14);
+  }
+}

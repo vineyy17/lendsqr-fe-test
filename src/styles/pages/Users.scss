@@ -1,1 +1,20 @@
 @use '/src/styles/main.scss' as *;
+
+.users {
+  @include flex_col(toRem(40));
+
+  &__heading {
+    font-family: $font-work-sans;
+    font-size: toRem(24);
+    font-weight: 500;
+    line-height: toRem(28.15);
+    text-align: left;
+    color: $primary-dark-blue;
+  }
+
+  &__stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

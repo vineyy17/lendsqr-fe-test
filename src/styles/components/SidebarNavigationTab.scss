@@ -7,12 +7,21 @@
   align-items: center;
   justify-content: flex-start;
 
+  &--active {
+    background-color: rgba($primary-aqua, 0.06);
+    border-left: toRem(3) solid $primary-aqua;
+  }
+
   &__wrapper {
     padding-left: toRem(30);
     @include flex(center, center, toRem(10));
 
     &__icon {
-      opacity: 60%;
+      opacity: 0.6;
+
+      &--active {
+        opacity: 1;
+      }
     }
 
     &__text {
@@ -21,6 +30,10 @@
       font-weight: 400;
       line-height: toRem(18.77);
       color: rgba($primary-dark-blue, 0.6);
+
+      &--active {
+        color: rgba($primary-dark-blue, 1);
+      }
     }
   }
 }

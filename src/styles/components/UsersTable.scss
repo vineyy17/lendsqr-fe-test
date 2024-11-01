@@ -10,6 +10,7 @@
   background-color: $white;
 
   padding: toRem(30);
+  padding-bottom: toRem(20);
 
   &__table {
     width: 100%;
@@ -52,12 +53,6 @@
           line-height: toRem(14.08);
           color: $accent-dark-blue;
           text-transform: uppercase;
-        }
-
-        &__icon {
-          width: toRem(16);
-          height: toRem(16);
-          cursor: pointer;
         }
       }
     }

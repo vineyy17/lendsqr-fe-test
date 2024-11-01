@@ -1,0 +1,25 @@
+@use '/src/styles/main.scss' as *;
+
+.filterUsers {
+  position: relative;
+  &__icon {
+    width: toRem(16);
+    height: toRem(16);
+    cursor: pointer;
+  }
+
+  &__box {
+    box-sizing: border-box;
+    width: toRem(270);
+    height: toRem(600);
+    border-radius: toRem(4);
+    background-color: $white;
+    border: toRem(1) solid rgba($accent-dark-blue, 0.14);
+    box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;
+    position: absolute;
+    left: toRem(-117);
+    top: toRem(10);
+    z-index: 100;
+    padding: toRem(30) toRem(20);
+  }
+}

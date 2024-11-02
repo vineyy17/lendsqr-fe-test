@@ -91,6 +91,136 @@
       border: toRem(1) solid rgba($primary-dark-blue, 0.06);
       box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;
       background-color: $white;
+      padding-top: toRem(30);
+      padding-left: toRem(30);
+      padding-right: toRem(30);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &__container {
+        width: fit-content;
+        height: toRem(100);
+        display: flex;
+        align-items: center;
+        gap: toRem(30);
+
+        &__name {
+          @include flex(flex-start, center, toRem(20));
+          &__avatar {
+            width: toRem(100);
+            height: toRem(100);
+            object-fit: cover;
+          }
+
+          &__details {
+            @include flex_col(toRem(8));
+            &__name {
+              font-family: $font-work-sans;
+              font-size: toRem(22);
+              font-weight: 500;
+              line-height: toRem(25.81);
+              text-align: left;
+              color: $primary-dark-blue;
+            }
+
+            &__id {
+              font-family: $font-work-sans;
+              font-size: toRem(14);
+              font-weight: 400;
+              line-height: toRem(16.42);
+              text-align: left;
+              color: $accent-dark-blue;
+            }
+          }
+        }
+
+        &__tierWrapper {
+          height: toRem(80);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-left: toRem(1) solid rgba($accent-dark-blue, 0.2);
+          border-right: toRem(1) solid rgba($accent-dark-blue, 0.2);
+        }
+
+        &__tier {
+          padding-right: toRem(30);
+          padding-left: toRem(30);
+          @include flex_col(toRem(10));
+          &__text {
+            font-family: $font-work-sans;
+            font-size: toRem(14);
+            font-weight: 500;
+            line-height: toRem(16.42);
+            text-align: left;
+            color: $accent-dark-blue;
+          }
+
+          &__stars {
+            @include flex(flex-start, center, toRem(4));
+            &__icon {
+              height: toRem(16);
+              width: toRem(16);
+            }
+          }
+        }
+
+        &__bank {
+          @include flex_col(toRem(12));
+          &__amount {
+            font-family: $font-work-sans;
+            font-size: toRem(22);
+            font-weight: 500;
+            line-height: toRem(25.81);
+            text-align: left;
+            color: $primary-dark-blue;
+          }
+
+          &__account {
+            font-family: $font-work-sans;
+            font-size: toRem(14);
+            font-weight: 400;
+            line-height: toRem(16.42);
+            text-align: left;
+            color: $accent-dark-blue;
+          }
+        }
+      }
+
+      &__tabs {
+        padding-left: toRem(6);
+        padding-right: toRem(6);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__box {
+          width: fit-content;
+
+          &.active {
+            border-bottom: toRem(2) solid $primary-aqua;
+          }
+
+          &__text {
+            padding-left: toRem(25);
+            padding-right: toRem(25);
+            font-family: $font-sf-compact;
+            font-size: toRem(16);
+            font-weight: 400;
+            line-height: toRem(19.09);
+            text-align: center;
+            color: rgba($black, 0.8);
+            padding-bottom: toRem(10);
+
+            &.active {
+              color: $primary-aqua;
+            }
+          }
+        }
+      }
     }
   }
 }

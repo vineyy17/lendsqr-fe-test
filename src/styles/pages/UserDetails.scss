@@ -227,7 +227,7 @@
   &__info {
     margin-top: toRem(30);
     width: 100%;
-    min-height: toRem(1037);
+    height: fit-content;
     border-radius: toRem(4);
     border: toRem(1) solid rgba($primary-dark-blue, 0.06);
     box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;

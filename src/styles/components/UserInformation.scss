@@ -25,6 +25,11 @@
       row-gap: toRem(30);
     }
 
+    &.socials {
+      @include flex(flex-start, center, toRem(84));
+      row-gap: toRem(30);
+    }
+
     &__column {
       @include flex_col(toRem(8));
 
@@ -50,6 +55,10 @@
 
       &.duration {
         margin-left: toRem(2);
+      }
+
+      &.instagram {
+        margin-left: toRem(19);
       }
 
       &__topText {

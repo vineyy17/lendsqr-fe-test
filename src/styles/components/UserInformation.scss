@@ -20,6 +20,11 @@
     row-gap: toRem(30);
     flex-wrap: wrap;
 
+    &.education {
+      @include flex(flex-start, center, toRem(73));
+      row-gap: toRem(30);
+    }
+
     &__column {
       @include flex_col(toRem(8));
 
@@ -33,6 +38,18 @@
 
       &.residence {
         margin-left: toRem(45);
+      }
+
+      &.status {
+        margin-left: toRem(24.25);
+      }
+
+      &.sector {
+        margin-left: toRem(87.25);
+      }
+
+      &.duration {
+        margin-left: toRem(2);
       }
 
       &__topText {

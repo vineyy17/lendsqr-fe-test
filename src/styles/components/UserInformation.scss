@@ -6,6 +6,10 @@
   @include flex_col(toRem(30));
   border-bottom: toRem(1) solid rgba($primary-dark-blue, 0.1);
 
+  &.guarantor {
+    border-bottom: none;
+  }
+
   &__heading {
     font-family: $font-work-sans;
     font-size: toRem(16);
@@ -27,6 +31,11 @@
 
     &.socials {
       @include flex(flex-start, center, toRem(84));
+      row-gap: toRem(30);
+    }
+
+    &.guarantor {
+      @include flex(flex-start, center, toRem(95));
       row-gap: toRem(30);
     }
 
@@ -59,6 +68,14 @@
 
       &.instagram {
         margin-left: toRem(19);
+      }
+
+      &.phone {
+        margin-left: toRem(3);
+      }
+
+      &.email {
+        margin-left: toRem(5);
       }
 
       &__topText {

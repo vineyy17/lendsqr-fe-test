@@ -1,0 +1,58 @@
+@use '/src/styles/main.scss' as *;
+
+.info {
+  padding-bottom: toRem(30);
+  width: toRem(911);
+  @include flex_col(toRem(30));
+  border-bottom: toRem(1) solid rgba($primary-dark-blue, 0.1);
+
+  &__heading {
+    font-family: $font-work-sans;
+    font-size: toRem(16);
+    font-weight: 500;
+    line-height: toRem(18.77);
+    text-align: left;
+    color: $primary-dark-blue;
+  }
+
+  &__flexWrapper {
+    @include flex(flex-start, center, toRem(100));
+    row-gap: toRem(30);
+    flex-wrap: wrap;
+
+    &__column {
+      @include flex_col(toRem(8));
+
+      &.bvn {
+        margin-left: toRem(2);
+      }
+
+      &.children {
+        margin-left: toRem(3);
+      }
+
+      &.residence {
+        margin-left: toRem(45);
+      }
+
+      &__topText {
+        font-family: $font-work-sans;
+        font-size: toRem(12);
+        font-weight: 400;
+        line-height: toRem(14.08);
+        text-align: left;
+        color: $accent-dark-blue;
+        text-transform: uppercase;
+      }
+
+      &__bottomText {
+        font-family: $font-work-sans;
+        font-size: toRem(16);
+        font-weight: 500;
+        line-height: toRem(18.77);
+        text-align: left;
+        color: $accent-dark-blue;
+      }
+    }
+  }
+}

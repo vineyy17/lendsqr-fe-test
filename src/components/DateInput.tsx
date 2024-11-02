@@ -29,6 +29,7 @@ const DateInput: React.FC<DateInputProps> = ({ placeholder }) => {
         value={
           selectedDate
             ? selectedDate.toLocaleDateString('en-US', {
+                weekday: 'short', // Add the day in short form (e.g., Mon)
                 month: 'short',
                 day: '2-digit',
                 year: 'numeric',
@@ -52,7 +53,7 @@ const DateInput: React.FC<DateInputProps> = ({ placeholder }) => {
             inline
             className="filterDate__datePicker"
             popperPlacement="bottom-start"
-            dateFormat="MMM dd, yyyy"
+            dateFormat="EEE, MMM dd, yyyy" // Update to display day in short form
           />
         </div>
       )}

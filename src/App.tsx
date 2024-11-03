@@ -6,6 +6,8 @@ import UserDetails from './pages/UserDetails';
 import { Theme } from '@radix-ui/themes';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import ProtectedRoute from './components/ProtectedRoute';
+import { AuthProvider } from './context/AuthContext';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -18,21 +20,30 @@ const queryClient = new QueryClient({
 
 function App() {
   return (
-    <Theme>
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <BrowserRouter>
-          <Routes>
-            <Route path="login" element={<Login />} />
-            <Route path="/" element={<AppLayout />}>
-              <Route index element={<Navigate replace to="users" />} />
-              <Route path="users" element={<Users />} />
-              <Route path="users/:userId" element={<UserDetails />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </QueryClientProvider>
-    </Theme>
+    <AuthProvider>
+      <Theme>
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <BrowserRouter>
+            <Routes>
+              <Route path="login" element={<Login />} />
+              <Route
+                path="app"
+                element={
+                  <ProtectedRoute>
+                    <AppLayout />
+                  </ProtectedRoute>
+                }
+              >
+                <Route index element={<Navigate replace to="users" />} />
+                <Route path="users" element={<Users />} />
+                <Route path="users/:userId" element={<UserDetails />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </QueryClientProvider>
+      </Theme>
+    </AuthProvider>
   );
 }
 

@@ -1,6 +1,6 @@
-import { UsersOverviewResponse } from '../types/userTypes';
+import { UsersOverview } from '../types/userTypes';
 
-export const fetchUsersOverview = async (): Promise<UsersOverviewResponse> => {
+export const fetchUsersOverview = async (): Promise<UsersOverview> => {
   const response = await fetch(
     'https://run.mocky.io/v3/f56759a3-0d3f-481b-8f2c-ee6b63e09661',
   );

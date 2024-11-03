@@ -6,6 +6,7 @@ import blacklistIcon from '../assets/images/dropdownBlacklist.png';
 import activateIcon from '../assets/images/dropdownActivate.png';
 import { User } from '../types/userTypes';
 import { formatDate } from '../utils/helpers';
+import { useNavigate } from 'react-router-dom';
 
 interface UsersTableRowProps {
   isLast?: boolean;
@@ -13,6 +14,8 @@ interface UsersTableRowProps {
 }
 
 const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
+  const navigate = useNavigate();
+
   return (
     <tbody className={`tableRow ${isLast ? 'tableRow--last' : ''}`}>
       <tr className="tableRow__row">
@@ -50,7 +53,10 @@ const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
           </Popover.Trigger>
           <Popover.Content>
             <div className="tableRow__row__popover">
-              <div className="tableRow__row__popover__wrapper">
+              <div
+                className="tableRow__row__popover__wrapper"
+                onClick={() => navigate(`/users/${user.id}`)}
+              >
                 <img
                   className="tableRow__row__popover__wrapper__viewIcon"
                   src={eyeIcon}

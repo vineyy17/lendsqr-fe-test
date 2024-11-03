@@ -6,19 +6,21 @@ type NameType =
   | 'Users With Savings'
   | 'Users With Loans';
 
-interface props {
+interface Props {
   name: NameType;
   icon: string;
-  stat: string;
+  stat: number | undefined;
 }
 
-const UsersStatsCard = ({ name, icon, stat }: props) => {
+const UsersStatsCard = ({ name, icon, stat }: Props) => {
+  const formattedStat = stat ? new Intl.NumberFormat().format(stat) : '0';
+
   return (
     <div className="statsCard">
       <div className="statsCard__inner">
         <img src={icon} alt="" className="statsCard__inner__icon" />
         <p className="statsCard__inner__name">{name}</p>
-        <p className="statsCard__inner__digit">{stat}</p>
+        <p className="statsCard__inner__digit">{formattedStat}</p>
       </div>
     </div>
   );

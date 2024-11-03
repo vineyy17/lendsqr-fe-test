@@ -12,6 +12,12 @@
   padding: toRem(30);
   padding-bottom: toRem(20);
 
+  &--loading {
+    padding: toRem(0);
+    box-shadow: none;
+    border: none;
+  }
+
   &__table {
     width: 100%;
     &__head {

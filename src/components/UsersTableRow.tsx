@@ -4,9 +4,11 @@ import { Popover } from '@radix-ui/themes';
 import eyeIcon from '../assets/icons/dropdownView.svg';
 import blacklistIcon from '../assets/images/dropdownBlacklist.png';
 import activateIcon from '../assets/images/dropdownActivate.png';
+import { Users } from '../types/userTypes';
 
 interface UsersTableRowProps {
   isLast?: boolean;
+  users: Users | undefined;
 }
 
 const statuses = [

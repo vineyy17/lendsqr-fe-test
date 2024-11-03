@@ -52,11 +52,11 @@ export interface User {
   status: string;
 }
 
-export interface UsersResponse {
+export interface Users {
   users: User[];
 }
 
-export interface UsersOverviewResponse {
+export interface UsersOverview {
   totalUsers: number;
   activeUsers: number;
   usersWithLoans: number;

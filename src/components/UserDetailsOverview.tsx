@@ -2,8 +2,13 @@ import '../styles/pages/UserDetails.scss';
 import profilePicture from '../assets/images/userImage.png';
 import fullStar from '../assets/icons/full-star.svg';
 import emptyStar from '../assets/icons/empty-star.svg';
+import { AccountInfo } from '../types/userDetails';
 
-const UserDetailsOverview = () => {
+interface props {
+  info: AccountInfo;
+}
+
+const UserDetailsOverview = ({ info }: props) => {
   return (
     <>
       <div className="userDetails__overview__wrapper">
@@ -27,10 +32,10 @@ const UserDetailsOverview = () => {
             />
             <div className="userDetails__overview__box__container__name__details">
               <p className="userDetails__overview__box__container__name__details__name">
-                Grace Effiom
+                {info.fullName}
               </p>
               <p className="userDetails__overview__box__container__name__details__id">
-                LSQFf587g90
+                {info.id}
               </p>
             </div>
           </div>
@@ -60,10 +65,10 @@ const UserDetailsOverview = () => {
           </div>
           <div className="userDetails__overview__box__container__bank">
             <p className="userDetails__overview__box__container__bank__amount">
-              ₦200,000.00
+              {info.balance}
             </p>
             <p className="userDetails__overview__box__container__bank__account">
-              9912345678/Providus Bank
+              {info.accountNumber}/{info.bankName}
             </p>
           </div>
         </div>

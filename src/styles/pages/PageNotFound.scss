@@ -1,0 +1,44 @@
+@use '/src/styles/main.scss' as *;
+
+.pnf {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    @include flex_col(toRem(20));
+
+    &__text {
+      font-family: $font-work-sans;
+      font-size: toRem(40);
+      font-weight: 700;
+      line-height: toRem(54.64);
+      letter-spacing: -0.04em;
+      text-align: left;
+      color: $primary-dark-blue;
+    }
+
+    &__button {
+      margin-top: toRem(6);
+      width: toRem(100);
+      height: toRem(48);
+      border-radius: toRem(8);
+      outline: none;
+      background-color: $primary-aqua;
+      cursor: pointer;
+      border: none;
+      margin: 0 auto;
+
+      font-family: $font-avenir;
+      font-size: toRem(14);
+      font-weight: 600;
+      line-height: toRem(19.12);
+      letter-spacing: 0.1em;
+      text-align: center;
+      color: $white;
+      text-transform: uppercase;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}

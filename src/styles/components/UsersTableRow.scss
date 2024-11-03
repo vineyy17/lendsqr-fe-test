@@ -106,22 +106,22 @@
       line-height: toRem(16.42);
       text-align: center;
 
-      &--active {
+      &--Active {
         background-color: rgba($primary-aqua, 0.06);
         color: $primary-aqua;
       }
 
-      &--pending {
+      &--Pending {
         background-color: rgba($pending-yellow, 0.06);
         color: $pending-yellow;
       }
 
-      &--blacklisted {
+      &--Blacklisted {
         background-color: rgba($sharp-red, 0.06);
         color: $sharp-red;
       }
 
-      &--inactive {
+      &--Inactive {
         background-color: rgba($accent-dark-blue, 0.06);
         color: $accent-dark-blue;
       }

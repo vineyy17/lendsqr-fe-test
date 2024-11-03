@@ -4,6 +4,7 @@ import UsersTableHead from './UsersTableHead';
 import { useUsers } from '../hooks/useUsers';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { User } from '../types/userTypes';
 
 const UsersTable = () => {
   const { isLoading, users, error } = useUsers();
@@ -28,9 +29,9 @@ const UsersTable = () => {
     <div className="usersTable">
       <table className="usersTable__table">
         <UsersTableHead />
-        {Array.from({ length: 9 }).map((_, index, array) => (
+        {users?.slice(0, 9).map((user: User, index: number, array) => (
           <UsersTableRow
-            users={users}
+            user={user}
             key={index}
             isLast={index === array.length - 1}
           />

@@ -4,48 +4,39 @@ import { Popover } from '@radix-ui/themes';
 import eyeIcon from '../assets/icons/dropdownView.svg';
 import blacklistIcon from '../assets/images/dropdownBlacklist.png';
 import activateIcon from '../assets/images/dropdownActivate.png';
-import { Users } from '../types/userTypes';
+import { User } from '../types/userTypes';
+import { formatDate } from '../utils/helpers';
 
 interface UsersTableRowProps {
   isLast?: boolean;
-  users: Users | undefined;
+  user: User;
 }
 
-const statuses = [
-  { text: 'Active', className: 'tableRow__row__userStatus--active' },
-  { text: 'Inactive', className: 'tableRow__row__userStatus--inactive' },
-  { text: 'Pending', className: 'tableRow__row__userStatus--pending' },
-  { text: 'Blacklisted', className: 'tableRow__row__userStatus--blacklisted' },
-];
-
-const getRandomStatus = () => {
-  const randomIndex = Math.floor(Math.random() * statuses.length);
-  return statuses[randomIndex];
-};
-
-const UsersTableRow = ({ isLast }: UsersTableRowProps) => {
-  const { text, className } = getRandomStatus();
-
+const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
   return (
     <tbody className={`tableRow ${isLast ? 'tableRow--last' : ''}`}>
       <tr className="tableRow__row">
         <td className="tableRow__row__text tableRow__row__text--org">
-          Lendsqr
+          {user.organization}
         </td>
         <td className="tableRow__row__text tableRow__row__text--name">
-          Debby Ogana
+          {user.surname}
         </td>
         <td className="tableRow__row__text tableRow__row__text--email">
-          debby2@irorun.com
+          {user.email}
         </td>
         <td className="tableRow__row__text tableRow__row__text--phone">
-          08160780928
+          0{user.phone}
         </td>
         <td className="tableRow__row__text tableRow__row__text--date">
-          Apr 30, 2020 10:00 AM
+          {formatDate(user.dateJoined)}
         </td>
         <td className="tableRow__row__userStatusWrapper">
-          <div className={`tableRow__row__userStatus ${className}`}>{text}</div>
+          <div
+            className={`tableRow__row__userStatus tableRow__row__userStatus--${user.status}`}
+          >
+            {user.status}
+          </div>
         </td>
         <Popover.Root>
           <Popover.Trigger>

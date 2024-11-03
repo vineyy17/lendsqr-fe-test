@@ -8,6 +8,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
+import { Toaster } from 'react-hot-toast';
+import PageNotFound from './pages/PageNotFound';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,7 +30,7 @@ function App() {
             <Routes>
               <Route path="login" element={<Login />} />
               <Route
-                path="app"
+                path="/"
                 element={
                   <ProtectedRoute>
                     <AppLayout />
@@ -39,8 +41,32 @@ function App() {
                 <Route path="users" element={<Users />} />
                 <Route path="users/:userId" element={<UserDetails />} />
               </Route>
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
           </BrowserRouter>
+
+          <Toaster
+            position="top-center"
+            gutter={12}
+            containerStyle={{ margin: '0.5rem' }}
+            toastOptions={{
+              success: {
+                duration: 3000,
+              },
+              error: {
+                duration: 4000,
+              },
+              style: {
+                fontSize: '1rem',
+                maxWidth: '31.25rem',
+                padding: '1rem 1.5rem',
+                backgroundColor: 'var(--color-white)',
+                color: 'var(--color-blue)',
+                animation: 'fade-in 0.5s',
+                borderRadius: '0.4rem',
+              },
+            }}
+          />
         </QueryClientProvider>
       </Theme>
     </AuthProvider>

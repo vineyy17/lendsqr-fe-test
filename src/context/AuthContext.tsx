@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer, ReactNode } from 'react';
+import toast from 'react-hot-toast';
 
 // Define types for User, State, and Action
 interface User {
@@ -62,6 +63,10 @@ function AuthProvider({ children }: AuthProviderProps) {
   function login(email: string, password: string) {
     if (email === FAKE_USER.email && password === FAKE_USER.password) {
       dispatch({ type: 'login', payload: FAKE_USER });
+    } else {
+      toast.error(
+        "Incorrect login details. Kindly check the GitHub repository's README or project doc for the correct login details.",
+      );
     }
   }
 

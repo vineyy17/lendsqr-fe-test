@@ -1,11 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/pages/Login.scss';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { formSchema, FormType } from '../utils/formSchema';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const { login, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
 
   const { register, handleSubmit, formState } = useForm<FormType>({
     resolver: zodResolver(formSchema, {}, { raw: true }),
@@ -23,8 +28,15 @@ const LoginForm = () => {
       ...data,
     };
 
-    console.log('formData', formData);
+    login(formData.email, formData.password);
   };
+
+  useEffect(
+    function () {
+      if (isAuthenticated) navigate('/', { replace: true });
+    },
+    [isAuthenticated, navigate],
+  );
 
   return (
     <form

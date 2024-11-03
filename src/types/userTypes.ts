@@ -52,10 +52,6 @@ export interface User {
   status: string;
 }
 
-export interface Users {
-  users: User[];
-}
-
 export interface UsersOverview {
   totalUsers: number;
   activeUsers: number;

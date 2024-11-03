@@ -1,16 +1,9 @@
 import '../styles/pages/Login.scss';
 import loginImage from '../assets/images/login-image.webp';
 import logo from '../assets/icons/logo-large.svg';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import LoginForm from '../components/LoginForm';
 
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   return (
     <div className="login">
       <div className="login__left">
@@ -29,33 +22,7 @@ const Login = () => {
               Enter details to login.
             </p>
           </div>
-          <div className="login__right__wrapper__form">
-            <input
-              placeholder="Email"
-              className="login__right__wrapper__form__input"
-            />
-            <div className="login__right__wrapper__form__inputWrapper">
-              <input
-                placeholder="Password"
-                className="login__right__wrapper__form__input"
-                type={showPassword ? 'text' : 'password'}
-              />
-              <p
-                className="login__right__wrapper__form__inputWrapper__text"
-                onClick={togglePasswordVisibility}
-              >
-                {showPassword ? 'Hide' : 'Show'}
-              </p>
-            </div>
-            <p className="login__right__wrapper__form__forgotPassword">
-              Forgot Password
-            </p>
-            <Link to="/users">
-              <button className="login__right__wrapper__form__button">
-                Log In
-              </button>
-            </Link>
-          </div>
+          <LoginForm />
         </div>
       </div>
     </div>

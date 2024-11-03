@@ -5,9 +5,16 @@ import { useForm } from 'react-hook-form';
 import { formSchema, FormType } from '../utils/formSchema';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { SyncLoader } from 'react-spinners';
+
+const override = {
+  display: 'block',
+  margin: '0 auto',
+};
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
@@ -24,19 +31,18 @@ const LoginForm = () => {
   };
 
   const onSubmit = (data: FormType) => {
-    const formData = {
-      ...data,
-    };
+    setLoading(true);
 
-    login(formData.email, formData.password);
+    // Simulate loading for 2.5 seconds before calling login
+    setTimeout(() => {
+      login(data.email, data.password);
+      setLoading(false);
+    }, 2500);
   };
 
-  useEffect(
-    function () {
-      if (isAuthenticated) navigate('/', { replace: true });
-    },
-    [isAuthenticated, navigate],
-  );
+  useEffect(() => {
+    if (isAuthenticated) navigate('/', { replace: true });
+  }, [isAuthenticated, navigate]);
 
   return (
     <form
@@ -50,7 +56,7 @@ const LoginForm = () => {
           type="email"
           id="email"
           {...register('email', { required: true })}
-          //   disabled={}
+          disabled={loading}
         />
         {errors?.email?.message && typeof errors.email.message === 'string' && (
           <span className="login__right__wrapper__form__error">
@@ -66,7 +72,7 @@ const LoginForm = () => {
           type={showPassword ? 'text' : 'password'}
           id="password"
           {...register('password', { required: true })}
-          //   disabled={}
+          disabled={loading}
         />
 
         {errors?.password?.message &&
@@ -88,8 +94,22 @@ const LoginForm = () => {
         Forgot Password
       </p>
 
-      <button type="submit" className="login__right__wrapper__form__button">
-        Log In
+      <button
+        type="submit"
+        className="login__right__wrapper__form__button"
+        disabled={loading}
+      >
+        {loading ? (
+          <SyncLoader
+            color="var(--color-white)"
+            cssOverride={override}
+            size="0.7rem"
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        ) : (
+          'Log In'
+        )}
       </button>
     </form>
   );

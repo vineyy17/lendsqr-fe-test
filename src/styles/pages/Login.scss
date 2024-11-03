@@ -68,6 +68,7 @@
           position: relative;
           width: fit-content;
           height: fit-content;
+          @include flex_col(toRem(5));
 
           &__text {
             position: absolute;
@@ -88,6 +89,16 @@
               color: $hover-aqua;
             }
           }
+        }
+
+        &__error {
+          color: $sharp-red;
+
+          font-family: $font-avenir;
+          font-size: toRem(14);
+          font-weight: 400;
+          line-height: toRem(19.12);
+          text-align: left;
         }
 
         &__input {

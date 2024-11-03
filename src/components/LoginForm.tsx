@@ -6,6 +6,8 @@ import { formSchema, FormType } from '../utils/formSchema';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { SyncLoader } from 'react-spinners';
+import { useLocalStorage } from '../hooks/useLocalStorage';
+import { userData } from '../data/userData';
 
 const override = {
   display: 'block',
@@ -13,6 +15,9 @@ const override = {
 };
 
 const LoginForm = () => {
+  // custom hook to manage local storage
+  const [_, setUserData] = useLocalStorage('user', userData);
+
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -41,7 +46,10 @@ const LoginForm = () => {
   };
 
   useEffect(() => {
-    if (isAuthenticated) navigate('/', { replace: true });
+    if (isAuthenticated) {
+      setUserData(userData);
+      navigate('/', { replace: true });
+    }
   }, [isAuthenticated, navigate]);
 
   return (

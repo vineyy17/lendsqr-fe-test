@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import { UsersOverviewResponse } from '../types/userTypes';
 import { fetchUsersOverview } from '../services/fetchUsersOverview';
+import { UsersOverview } from '../types/userTypes';
 
 export function useUsersOverview() {
   const {
     isLoading,
     data: usersOverview,
     error,
-  } = useQuery<UsersOverviewResponse, Error>({
+  } = useQuery<UsersOverview, Error>({
     queryKey: ['usersOverview'],
     queryFn: fetchUsersOverview,
   });

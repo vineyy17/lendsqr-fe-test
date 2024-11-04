@@ -1,5 +1,9 @@
 @use '/src/styles/main.scss' as *;
 
+.usersTableWrapper {
+  @include flex_col(toRem(20));
+}
+
 .usersTable {
   box-sizing: border-box;
   width: 100%;

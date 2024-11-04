@@ -1,0 +1,113 @@
+@use '/src/styles/main.scss' as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+
+    &__text {
+      font-family: $font-work-sans;
+      font-size: toRem(14);
+      font-weight: 400;
+      line-height: toRem(16.42);
+      color: $accent-dark-blue;
+    }
+
+    &__selectWrapper {
+      position: relative;
+      &__select {
+        width: toRem(80);
+        height: toRem(30);
+        background-color: rgba($primary-dark-blue, 0.1);
+        border-radius: toRem(4);
+        padding: toRem(7) toRem(12);
+        cursor: pointer;
+        border: none;
+
+        font-family: $font-work-sans;
+        font-size: toRem(14);
+        font-weight: 500;
+        line-height: toRem(16.42);
+        text-align: left;
+        color: $primary-dark-blue;
+
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+
+        &::-ms-expand {
+          display: none;
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+        option {
+          background-color: $white;
+        }
+      }
+
+      &__icon {
+        position: absolute;
+        top: toRem(8);
+        right: toRem(12);
+        width: toRem(14);
+        height: toRem(14);
+      }
+    }
+  }
+
+  .pagination__controls {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+
+    button {
+      width: toRem(24);
+      height: toRem(24);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: toRem(4);
+      background-color: rgba($primary-dark-blue, 0.1);
+      outline: none;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      svg {
+        width: toRem(14);
+        height: toRem(14);
+      }
+    }
+
+    &__textWrapper {
+      margin-left: toRem(20);
+      margin-right: toRem(20);
+      @include flex(flex-start, center, toRem(20));
+    }
+
+    &__text {
+      font-family: $font-work-sans;
+      font-size: toRem(16);
+      font-weight: 500;
+      line-height: toRem(18.77);
+      color: rgba($accent-dark-blue, 0.6);
+
+      &.active {
+        color: $accent-dark-blue;
+      }
+    }
+  }
+}

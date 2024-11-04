@@ -8,6 +8,7 @@ import { User } from '../types/userTypes';
 import { formatDate } from '../utils/helpers';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 interface UsersTableRowProps {
   isLast?: boolean;
@@ -16,6 +17,18 @@ interface UsersTableRowProps {
 
 const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
   const navigate = useNavigate();
+  // Initialize with user's original status
+  const [status, setStatus] = useState<string>(user.status);
+
+  const handleBlacklist = () => {
+    setStatus('Blacklisted');
+    toast.success('User successfully blacklisted');
+  };
+
+  const handleActivate = () => {
+    setStatus('Active');
+    toast.success('User successfully activated');
+  };
 
   return (
     <tbody className={`tableRow ${isLast ? 'tableRow--last' : ''}`}>
@@ -37,9 +50,9 @@ const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
         </td>
         <td className="tableRow__row__userStatusWrapper">
           <div
-            className={`tableRow__row__userStatus tableRow__row__userStatus--${user.status}`}
+            className={`tableRow__row__userStatus tableRow__row__userStatus--${status}`}
           >
-            {user.status}
+            {status}
           </div>
         </td>
         <Popover.Root>
@@ -69,7 +82,7 @@ const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
               </div>
               <div
                 className="tableRow__row__popover__wrapper"
-                onClick={() => toast.success('User successfully blacklisted')}
+                onClick={handleBlacklist}
               >
                 <img
                   className="tableRow__row__popover__wrapper__blacklistIcon"
@@ -82,7 +95,7 @@ const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
               </div>
               <div
                 className="tableRow__row__popover__wrapper"
-                onClick={() => toast.success('User successfully activated')}
+                onClick={handleActivate}
               >
                 <img
                   className="tableRow__row__popover__wrapper__activateIcon"

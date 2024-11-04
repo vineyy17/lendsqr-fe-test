@@ -68,6 +68,10 @@
       }
 
       @include media('<=tablet') {
+        width: toRem(150);
+      }
+
+      @include media('<=phone-tab') {
         margin-top: toRem(20);
         width: toRem(150);
       }
@@ -79,11 +83,12 @@
       @include flex_col(toRem(60));
 
       @include media('<=tablet') {
-        width: 100%;
+        min-width: 100%;
       }
 
       @include media('<=phone-tab') {
         margin-top: toRem(50);
+        width: 100%;
       }
 
       &__info {
@@ -125,6 +130,10 @@
           width: fit-content;
           height: fit-content;
           @include flex_col(toRem(5));
+
+          @include media('<=tablet') {
+            min-width: 100%;
+          }
 
           @include media('<=phone-tab') {
             width: 100%;
@@ -177,14 +186,6 @@
           text-align: left;
           color: $accent-dark-blue;
 
-          @include media('<=tablet') {
-            min-width: 100%;
-          }
-
-          @include media('<=phone-tab') {
-            width: 100%;
-          }
-
           &::placeholder {
             font-family: $font-avenir;
             font-size: toRem(14);
@@ -192,6 +193,14 @@
             line-height: toRem(19.12);
             text-align: left;
             color: rgba($accent-dark-blue, 0.6);
+          }
+
+          @include media('<=tablet') {
+            min-width: 100%;
+          }
+
+          @include media('<=phone-tab') {
+            width: 100%;
           }
         }
 

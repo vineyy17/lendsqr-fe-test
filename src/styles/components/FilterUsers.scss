@@ -11,7 +11,7 @@
   &__box {
     box-sizing: border-box;
     width: toRem(270);
-    height: toRem(610);
+    height: fit-content;
     border-radius: toRem(4);
     background-color: $white;
     border: toRem(1) solid rgba($accent-dark-blue, 0.14);
@@ -34,6 +34,16 @@
         line-height: toRem(16.42);
         text-align: left;
         color: $accent-dark-blue;
+      }
+
+      &__error {
+        color: $sharp-red;
+
+        font-family: $font-avenir;
+        font-size: toRem(14);
+        font-weight: 400;
+        line-height: toRem(19.12);
+        text-align: left;
       }
     }
 

@@ -1,4 +1,4 @@
-function standardizeDate(isoString: string): string {
+export function standardizeDate(isoString: string): string {
   return isoString.replace(
     /^(\d{4})-(\d{1,2})-(\d{1,2})/,
     (_, year, month, day) =>

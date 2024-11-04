@@ -24,7 +24,7 @@ const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
           {user.organization}
         </td>
         <td className="tableRow__row__text tableRow__row__text--name">
-          {user.surname}
+          {user.username}
         </td>
         <td className="tableRow__row__text tableRow__row__text--email">
           {user.email}

@@ -63,7 +63,7 @@ const FilterUsers = () => {
 
       const matchesUsername =
         !data.username ||
-        user.surname.toLowerCase().includes(data.username.toLowerCase());
+        user.username.toLowerCase().includes(data.username.toLowerCase());
 
       const matchesEmail =
         !data.email ||

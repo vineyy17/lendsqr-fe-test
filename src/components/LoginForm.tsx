@@ -8,6 +8,7 @@ import { useAuth } from '../context/AuthContext';
 import { SyncLoader } from 'react-spinners';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { userData } from '../data/userData';
+import toast from 'react-hot-toast';
 
 const override = {
   display: 'block',
@@ -98,7 +99,14 @@ const LoginForm = () => {
         </p>
       </div>
 
-      <p className="login__right__wrapper__form__forgotPassword">
+      <p
+        className="login__right__wrapper__form__forgotPassword"
+        onClick={() =>
+          toast.success(
+            'A reset password link has been successfully sent to your provided email address',
+          )
+        }
+      >
         Forgot Password
       </p>
 

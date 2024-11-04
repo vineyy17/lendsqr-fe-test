@@ -3,6 +3,7 @@ import profilePicture from '../assets/images/userImage.png';
 import fullStar from '../assets/icons/full-star.svg';
 import emptyStar from '../assets/icons/empty-star.svg';
 import { AccountInfo } from '../types/userDetails';
+import toast from 'react-hot-toast';
 
 interface props {
   info: AccountInfo;
@@ -14,10 +15,16 @@ const UserDetailsOverview = ({ info }: props) => {
       <div className="userDetails__overview__wrapper">
         <p className="userDetails__overview__wrapper__heading">User Details</p>
         <div className="userDetails__overview__wrapper__buttonWrapper">
-          <button className="userDetails__overview__wrapper__buttonWrapper__blacklist">
+          <button
+            className="userDetails__overview__wrapper__buttonWrapper__blacklist"
+            onClick={() => toast.success('User successfully blacklisted')}
+          >
             Blacklist User
           </button>
-          <button className="userDetails__overview__wrapper__buttonWrapper__activate">
+          <button
+            className="userDetails__overview__wrapper__buttonWrapper__activate"
+            onClick={() => toast.success('User successfully activated')}
+          >
             Activate User
           </button>
         </div>

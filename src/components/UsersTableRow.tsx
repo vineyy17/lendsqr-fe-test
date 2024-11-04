@@ -7,6 +7,7 @@ import activateIcon from '../assets/images/dropdownActivate.png';
 import { User } from '../types/userTypes';
 import { formatDate } from '../utils/helpers';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 interface UsersTableRowProps {
   isLast?: boolean;
@@ -66,7 +67,10 @@ const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
                   View Details
                 </p>
               </div>
-              <div className="tableRow__row__popover__wrapper">
+              <div
+                className="tableRow__row__popover__wrapper"
+                onClick={() => toast.success('User successfully blacklisted')}
+              >
                 <img
                   className="tableRow__row__popover__wrapper__blacklistIcon"
                   src={blacklistIcon}
@@ -76,7 +80,10 @@ const UsersTableRow = ({ isLast, user }: UsersTableRowProps) => {
                   Blacklist User
                 </p>
               </div>
-              <div className="tableRow__row__popover__wrapper">
+              <div
+                className="tableRow__row__popover__wrapper"
+                onClick={() => toast.success('User successfully activated')}
+              >
                 <img
                   className="tableRow__row__popover__wrapper__activateIcon"
                   src={activateIcon}

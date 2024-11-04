@@ -15,6 +15,8 @@ const Login = () => {
         />
       </div>
       <div className="login__right">
+        <img src={logo} className="login__right__logo" alt="Lendsqr logo" />
+
         <div className="login__right__wrapper">
           <div className="login__right__wrapper__info">
             <p className="login__right__wrapper__info__topText">Welcome!</p>

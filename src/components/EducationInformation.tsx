@@ -48,7 +48,7 @@ const EducationInformation = ({ info }: props) => {
             {info.officeEmail}
           </p>
         </div>
-        <div className="info__flexWrapper__column">
+        <div className="info__flexWrapper__column income">
           <p className="info__flexWrapper__column__topText">Monthly income</p>
           <p className="info__flexWrapper__column__bottomText">
             {info.monthlyIncome}

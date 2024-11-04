@@ -25,7 +25,7 @@
     flex-wrap: wrap;
 
     &.education {
-      @include flex(flex-start, center, toRem(73));
+      @include flex(flex-start, center, toRem(71));
       row-gap: toRem(30);
     }
 
@@ -59,11 +59,11 @@
       }
 
       &.sector {
-        margin-left: toRem(87.25);
+        margin-left: toRem(91.25);
       }
 
       &.duration {
-        margin-left: toRem(2);
+        margin-left: toRem(3.5);
       }
 
       &.instagram {

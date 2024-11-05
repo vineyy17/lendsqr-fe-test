@@ -11,10 +11,87 @@
   padding-top: toRem(39);
   padding-bottom: toRem(39);
 
+  @include media('<=tablet') {
+    display: none;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-left: toRem(30);
+    padding-right: toRem(30);
+    padding-bottom: toRem(40);
+
+    @include media('>tablet') {
+      display: none;
+    }
+
+    &__logo {
+      width: toRem(144.8);
+      height: toRem(30);
+
+      @include media('>tablet') {
+        display: none;
+      }
+
+      @include media('<=phone-tab') {
+        width: toRem(124.8);
+      }
+    }
+    &__close {
+      cursor: pointer;
+      width: toRem(23);
+      height: toRem(23);
+      color: $primary-dark-blue;
+
+      @include media('>tablet') {
+        display: none;
+      }
+    }
+  }
+
+  &--open {
+    background-color: $white;
+    grid-row: 2 / -1;
+    grid-column: 1 / 2;
+    height: calc(100vh - toRem(100));
+
+    box-shadow: toRem(0) toRem(5) toRem(20) toRem(0) $header-shadow;
+    z-index: 1;
+    padding-top: toRem(39);
+    padding-bottom: toRem(39);
+
+    @include media('<=tablet') {
+      background-color: $white;
+      height: 100vh;
+      box-shadow: toRem(0) toRem(5) toRem(20) toRem(0) $header-shadow;
+      padding-top: toRem(39);
+      padding-bottom: toRem(39);
+
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100vh;
+      transform: translateX(0);
+      z-index: 200;
+
+      @include media('<=phone-tab') {
+        width: 80%;
+      }
+    }
+  }
+
   &__scrollWrapper {
     height: calc(100vh - toRem(239));
 
     overflow-y: auto;
+
+    @include media('<=tablet') {
+      height: calc(100vh - toRem(210));
+    }
 
     &::-webkit-scrollbar {
       display: none;

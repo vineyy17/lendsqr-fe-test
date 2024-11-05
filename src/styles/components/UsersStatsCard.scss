@@ -11,6 +11,10 @@
   padding-left: toRem(30);
   padding-bottom: toRem(30);
 
+  @include media('<=tablet') {
+    flex-shrink: 0;
+  }
+
   &__inner {
     @include flex_col(toRem(12));
 

@@ -20,6 +20,10 @@
     overflow-x: scroll;
   }
 
+  @include media('<=phone-tab') {
+    padding-right: toRem(50);
+  }
+
   &--loading {
     padding: toRem(0);
     box-shadow: none;

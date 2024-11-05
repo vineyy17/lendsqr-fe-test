@@ -16,13 +16,14 @@ const override = {
 };
 
 const LoginForm = () => {
+  const { login, isAuthenticated } = useAuth();
+
   // custom hook to manage local storage
   const [_, setUserData] = useLocalStorage('user', userData);
 
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { login, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   const { register, handleSubmit, formState } = useForm<FormType>({

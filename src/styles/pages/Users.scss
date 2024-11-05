@@ -3,6 +3,10 @@
 .users {
   @include flex_col(toRem(40));
 
+  @include media('<=tablet') {
+    gap: toRem(20);
+  }
+
   &__heading {
     font-family: $font-work-sans;
     font-size: toRem(24);
@@ -16,5 +20,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include media('<=tablet') {
+      overflow-x: scroll;
+      gap: toRem(20);
+      padding-bottom: toRem(5);
+    }
   }
 }

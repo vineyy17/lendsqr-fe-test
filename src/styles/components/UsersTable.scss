@@ -16,6 +16,10 @@
   padding: toRem(30);
   padding-bottom: toRem(20);
 
+  @include media('<=tablet') {
+    overflow-x: scroll;
+  }
+
   &--loading {
     padding: toRem(0);
     box-shadow: none;

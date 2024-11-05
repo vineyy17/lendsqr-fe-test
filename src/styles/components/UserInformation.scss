@@ -6,6 +6,10 @@
   @include flex_col(toRem(30));
   border-bottom: toRem(1) solid rgba($primary-dark-blue, 0.1);
 
+  @include media('<=tablet') {
+    width: 100%;
+  }
+
   &.guarantor {
     border-bottom: none;
   }
@@ -24,19 +28,67 @@
     row-gap: toRem(30);
     flex-wrap: wrap;
 
+    @include media('<=tablet') {
+      display: flex;
+      align-items: center;
+      gap: toRem(65);
+    }
+
+    @include media('<=phone-tab') {
+      flex-direction: column;
+      gap: toRem(50);
+      align-items: flex-start;
+    }
+
     &.education {
       @include flex(flex-start, center, toRem(71));
       row-gap: toRem(30);
+
+      @include media('<=tablet') {
+        display: flex;
+        align-items: center;
+        gap: toRem(65);
+      }
+
+      @include media('<=phone-tab') {
+        flex-direction: column;
+        gap: toRem(50);
+        align-items: flex-start;
+      }
     }
 
     &.socials {
       @include flex(flex-start, center, toRem(84));
       row-gap: toRem(30);
+
+      @include media('<=tablet') {
+        display: flex;
+        align-items: center;
+        gap: toRem(65);
+      }
+
+      @include media('<=phone-tab') {
+        flex-direction: column;
+        gap: toRem(50);
+        align-items: flex-start;
+      }
     }
 
     &.guarantor {
       @include flex(flex-start, center, toRem(95));
       row-gap: toRem(30);
+
+      @include media('<=tablet') {
+        display: flex;
+        align-items: center;
+        gap: toRem(65);
+      }
+
+      @include media('<=phone-tab') {
+        flex-direction: column;
+        gap: toRem(50);
+        align-items: flex-start;
+      }
     }
 
     &__column {
@@ -44,38 +96,81 @@
 
       &.bvn {
         margin-left: toRem(2);
+
+        @include media('<=tablet') {
+          margin-left: toRem(0);
+        }
       }
 
       &.children {
         margin-left: toRem(3);
+
+        @include media('<=tablet') {
+          margin-left: toRem(0);
+        }
       }
 
       &.residence {
         margin-left: toRem(45);
+
+        @include media('<=tablet') {
+          margin-left: toRem(0);
+        }
       }
 
       &.status {
         margin-left: toRem(24.25);
+
+        @include media('<=tablet') {
+          margin-left: toRem(0);
+        }
       }
 
       &.sector {
         margin-left: toRem(91.25);
+
+        @include media('<=tablet') {
+          margin-left: toRem(0);
+          order: 1;
+        }
       }
 
       &.duration {
         margin-left: toRem(3.5);
+
+        @include media('<=tablet') {
+          margin-left: toRem(0);
+        }
+      }
+
+      &.income {
+        @include media('<=tablet') {
+          order: 3;
+        }
       }
 
       &.instagram {
         margin-left: toRem(19);
+
+        @include media('<=tablet') {
+          margin-left: toRem(0);
+        }
       }
 
       &.phone {
         margin-left: toRem(3);
+
+        @include media('<=tablet') {
+          margin-left: toRem(0);
+        }
       }
 
       &.email {
         margin-left: toRem(5);
+
+        @include media('<=tablet') {
+          margin-left: toRem(0);
+        }
       }
 
       &__topText {

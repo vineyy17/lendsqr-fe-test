@@ -87,7 +87,7 @@
       }
 
       @include media('<=phone-tab') {
-        margin-top: toRem(50);
+        margin-top: toRem(30);
         width: 100%;
       }
 
@@ -197,10 +197,12 @@
 
           @include media('<=tablet') {
             min-width: 100%;
+            font-size: toRem(16);
           }
 
           @include media('<=phone-tab') {
             width: 100%;
+            font-size: toRem(16);
           }
         }
 

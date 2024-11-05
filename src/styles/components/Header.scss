@@ -93,6 +93,14 @@
           line-height: toRem(16.42);
           color: rgba($primary-dark-blue, 0.7);
         }
+
+        @include media('<=tablet') {
+          font-size: toRem(16);
+        }
+
+        @include media('<=phone-tab') {
+          font-size: toRem(16);
+        }
       }
 
       &__search {

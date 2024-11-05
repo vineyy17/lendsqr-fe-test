@@ -4,12 +4,16 @@ import search from '../assets/icons/search.svg';
 import notification from '../assets/images/notification.jpg';
 import avatar from '../assets/images/avatar.png';
 import dropDown from '../assets/icons/dropdown.svg';
+import { RxHamburgerMenu } from 'react-icons/rx';
 import { useUsers } from '../hooks/useUsers';
 import { useFilterStore } from '../store/filterStore';
 import { useState, ChangeEvent } from 'react';
-import { User } from '../types/userTypes';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  toggleSidebar: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   const { users } = useUsers();
   const { setFilteredUsers } = useFilterStore();
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -19,14 +23,14 @@ const Header: React.FC = () => {
     setSearchQuery(query);
 
     if (!query) {
-      setFilteredUsers(users ?? []); // Reset to full list if search is cleared
+      setFilteredUsers(users ?? []);
       return;
     }
 
-    const filtered = (users ?? []).filter((user: User) => {
+    const filtered = (users ?? []).filter((user) => {
       const matchesUsername = user.username.toLowerCase().includes(query);
       const matchesEmail = user.email.toLowerCase().includes(query);
-      const matchesPhone = !query || `0${user.phone}`.includes(query);
+      const matchesPhone = `0${user.phone}`.includes(query);
       const matchesOrganization = user.organization
         .toLowerCase()
         .includes(query);
@@ -41,6 +45,7 @@ const Header: React.FC = () => {
 
   return (
     <div className="header">
+      <RxHamburgerMenu onClick={toggleSidebar} className="header__hamburger" />
       <div className="header__left">
         <img src={logo} className="header__left__logo" alt="logo" />
         <div className="header__left__searchWrapper">

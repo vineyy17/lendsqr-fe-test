@@ -5,6 +5,11 @@
   align-items: center;
   justify-content: space-between;
 
+  @include media('<=phone-tab') {
+    flex-direction: column;
+    gap: toRem(25);
+  }
+
   &__info {
     display: flex;
     align-items: center;

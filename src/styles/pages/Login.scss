@@ -72,7 +72,6 @@
       }
 
       @include media('<=phone-tab') {
-        margin-top: toRem(20);
         width: toRem(150);
       }
     }
@@ -87,7 +86,7 @@
       }
 
       @include media('<=phone-tab') {
-        margin-top: toRem(30);
+        margin-top: toRem(40);
         width: 100%;
       }
 

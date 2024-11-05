@@ -65,7 +65,12 @@ select {
 
 ::-webkit-scrollbar {
   width: toRem(7);
+  height: toRem(5);
   cursor: grab;
+
+  @include media('<=tablet') {
+    width: toRem(5);
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -74,8 +79,20 @@ select {
   cursor: grab;
 }
 
+::-webkit-scrollbar-track:horizontal {
+  background: $light-grey;
+  border-radius: toRem(25);
+  cursor: grab;
+}
+
 ::-webkit-scrollbar-thumb {
   background-color: $medium-grey;
+  border-radius: toRem(25);
+  cursor: grab;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: rgba($medium-grey, 0.3);
   border-radius: toRem(25);
   cursor: grab;
 }

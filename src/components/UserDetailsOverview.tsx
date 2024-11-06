@@ -29,7 +29,10 @@ const UserDetailsOverview = ({ info }: props) => {
           </button>
         </div>
       </div>
-      <div className="userDetails__overview__box">
+      <div
+        data-testid="user-details-overview"
+        className="userDetails__overview__box"
+      >
         <div className="userDetails__overview__box__container">
           <div className="userDetails__overview__box__container__name">
             <img

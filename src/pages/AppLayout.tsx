@@ -18,7 +18,7 @@ const AppLayout = () => {
         isSidebarOpen={isSidebarOpen}
         closeSidebar={() => setIsSidebarOpen(false)}
       />
-      <main className="appLayout__main">
+      <main className="appLayout__main" role="main">
         <div className="appLayout__main__container">
           <Outlet />
         </div>

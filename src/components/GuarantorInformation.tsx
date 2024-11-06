@@ -7,7 +7,7 @@ interface props {
 
 const GuarantorInformation = ({ info }: props) => {
   return (
-    <div className="info guarantor">
+    <div className="info guarantor" data-testid="guarantor-information">
       <p className="info__heading">Guarantor</p>
       <div className="info__flexWrapper guarantor">
         <div className="info__flexWrapper__column">

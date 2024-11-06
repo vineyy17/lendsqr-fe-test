@@ -7,7 +7,7 @@ interface props {
 
 const SocialsInformation = ({ info }: props) => {
   return (
-    <div className="info">
+    <div className="info" data-testid="socials-information">
       <p className="info__heading">Socials</p>
       <div className="info__flexWrapper socials">
         <div className="info__flexWrapper__column">

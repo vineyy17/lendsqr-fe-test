@@ -45,6 +45,10 @@
     left: toRem(30);
     top: toRem(30);
 
+    @include media('<=phone-tab') {
+      width: toRem(153);
+    }
+
     @include flex_col(toRem(18));
 
     p {
@@ -53,8 +57,17 @@
       font-weight: 400;
       line-height: toRem(18.77);
       margin-left: toRem(2);
-      color: $primary-dark-blue;
+      color: $accent-dark-blue;
       cursor: pointer;
+
+      @include media('<=phone-tab') {
+        font-family: $font-work-sans;
+        font-size: toRem(13);
+        font-weight: 400;
+        line-height: toRem(16.42);
+        color: $accent-dark-blue;
+        font-family: $font-work-sans;
+      }
     }
   }
 }

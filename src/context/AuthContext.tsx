@@ -65,7 +65,7 @@ function AuthProvider({ children }: AuthProviderProps) {
       dispatch({ type: 'login', payload: FAKE_USER });
     } else {
       toast.error(
-        "Incorrect login details. Kindly check the GitHub repository's README or project doc for the correct login details.",
+        'Incorrect login details. Please log in with the email address lendsqr@outlook.com and the password lendsqr123. Alternatively, refer to the project README or documentation.',
       );
     }
   }
@@ -90,4 +90,4 @@ function useAuth(): AuthContextType {
   return context;
 }
 
-export { AuthProvider, useAuth };
+export { AuthProvider, AuthContext, useAuth };

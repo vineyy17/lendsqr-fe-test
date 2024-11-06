@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import Header from '../../src/components/Header';
 import { useUsers } from '../../src/hooks/useUsers';
 import { useFilterStore } from '../../src/store/filterStore';
+import { AuthProvider } from '../../src/context/AuthContext';
 
 // Mock the hooks
 vi.mock('../../src/hooks/useUsers', () => ({
@@ -88,7 +89,11 @@ describe('Header Component', () => {
   });
 
   it('renders correctly with all elements', () => {
-    render(<Header toggleSidebar={mockToggleSidebar} />);
+    render(
+      <AuthProvider>
+        <Header toggleSidebar={mockToggleSidebar} />
+      </AuthProvider>,
+    );
 
     // Check if all main elements are present
     expect(
@@ -103,7 +108,11 @@ describe('Header Component', () => {
   });
 
   it('calls toggleSidebar when hamburger menu is clicked', async () => {
-    render(<Header toggleSidebar={mockToggleSidebar} />);
+    render(
+      <AuthProvider>
+        <Header toggleSidebar={mockToggleSidebar} />
+      </AuthProvider>,
+    );
 
     // Find by SVG title or class name
     const hamburger = screen.getByTestId('hamburger-menu');
@@ -113,7 +122,11 @@ describe('Header Component', () => {
   });
 
   it('filters users by username when searching', async () => {
-    render(<Header toggleSidebar={mockToggleSidebar} />);
+    render(
+      <AuthProvider>
+        <Header toggleSidebar={mockToggleSidebar} />
+      </AuthProvider>,
+    );
 
     const searchInput = screen.getByPlaceholderText('Search for anything');
     await userEvent.type(searchInput, 'john');
@@ -122,7 +135,11 @@ describe('Header Component', () => {
   });
 
   it('filters users by email when searching', async () => {
-    render(<Header toggleSidebar={mockToggleSidebar} />);
+    render(
+      <AuthProvider>
+        <Header toggleSidebar={mockToggleSidebar} />
+      </AuthProvider>,
+    );
 
     const searchInput = screen.getByPlaceholderText('Search for anything');
     await userEvent.type(searchInput, 'jane@test');
@@ -131,7 +148,11 @@ describe('Header Component', () => {
   });
 
   it('filters users by organization when searching', async () => {
-    render(<Header toggleSidebar={mockToggleSidebar} />);
+    render(
+      <AuthProvider>
+        <Header toggleSidebar={mockToggleSidebar} />
+      </AuthProvider>,
+    );
 
     const searchInput = screen.getByPlaceholderText('Search for anything');
     await userEvent.type(searchInput, 'testorg');
@@ -140,7 +161,11 @@ describe('Header Component', () => {
   });
 
   it('filters users by phone number when searching', async () => {
-    render(<Header toggleSidebar={mockToggleSidebar} />);
+    render(
+      <AuthProvider>
+        <Header toggleSidebar={mockToggleSidebar} />
+      </AuthProvider>,
+    );
 
     const searchInput = screen.getByPlaceholderText('Search for anything');
     await userEvent.type(searchInput, '1234567890');
@@ -149,7 +174,11 @@ describe('Header Component', () => {
   });
 
   it('resets filtered users when search input is cleared', async () => {
-    render(<Header toggleSidebar={mockToggleSidebar} />);
+    render(
+      <AuthProvider>
+        <Header toggleSidebar={mockToggleSidebar} />
+      </AuthProvider>,
+    );
 
     const searchInput = screen.getByPlaceholderText('Search for anything');
     await userEvent.type(searchInput, 'john');
@@ -165,7 +194,11 @@ describe('Header Component', () => {
       error: null,
     });
 
-    render(<Header toggleSidebar={mockToggleSidebar} />);
+    render(
+      <AuthProvider>
+        <Header toggleSidebar={mockToggleSidebar} />
+      </AuthProvider>,
+    );
 
     const searchInput = screen.getByPlaceholderText('Search for anything');
     fireEvent.change(searchInput, { target: { value: 'test' } });

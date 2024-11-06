@@ -16,7 +16,7 @@ const UsersStatsCard = ({ name, icon, stat }: Props) => {
   const formattedStat = stat ? new Intl.NumberFormat().format(stat) : '0';
 
   return (
-    <div className="statsCard">
+    <div className="statsCard" data-testid="users-stats-card">
       <div className="statsCard__inner">
         <img src={icon} alt="" className="statsCard__inner__icon" />
         <p className="statsCard__inner__name">{name}</p>

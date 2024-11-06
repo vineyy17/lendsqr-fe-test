@@ -1,50 +1,139 @@
-# React + TypeScript + Vite
+# Lendsqr Frontend Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was developed as part of the Lendsqr frontend assessment, showcasing a responsive user interface with essential features for an engaging user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User Authentication: Secure login functionality with validation
+- User Dashboard: Displays key metrics and insights for each user
+- State Management: State handling is organized with Zustand
+- Data Fetching: API services to retrieve and display data in real-time
+- Form Handling: Comprehensive form management with validation
+- Loading Indicators: Skeleton loaders and spinners to enhance loading experience
+- Interactive UI Elements: Icons, modals, and custom hooks for a polished user experience
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The project is organized with clear directory structure, facilitating easy navigation and development:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+root
+├── src
+│   ├── assets               # Icons and images
+│   │   ├── icons
+│   │   └── images
+│   ├── components           # Reusable UI components
+│   ├── context              # Context providers for global state
+│   ├── data                 # Static data files
+│   ├── fonts                # Custom fonts
+│   ├── hooks                # Custom hooks
+│   ├── pages                # Application pages and routing
+│   ├── services             # API services and data fetching logic
+│   ├── store                # Zustand state management
+│   ├── styles               # Global and component-specific styles
+│   ├── types                # TypeScript types and interfaces
+│   ├── utils                # Utility functions
+│   ├── App.tsx              # Main application component
+│   └── main.tsx             # Entry point
+├── tests                    # Unit and integration tests
+│   ├── components
+│   ├── pages
+│   ├── AllProviders.tsx     # Wrapper for test providers
+│   ├── setup.ts             # Test setup and configuration
+│   └── utils.tsx            # Test utilities
+└── package.json             # Project metadata and dependencies
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Pages Overview
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Login Page**: A secure login page that validates user credentials and handles authentication
+- **Dashboard**: Displays a summary of user activity and key metrics for a quick overview
+- **User Details**: Provides tools for viewing, searching, and managing users
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js: Ensure Node.js is installed
+- Vite: Development server is powered by Vite
+
+### Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/vineyy17/lendsqr-fe-test
+cd lendsqr-frontend-assessment
+npm install
 ```
+
+### Running the Application
+
+To start the development server:
+
+```bash
+npm run dev
+```
+
+To build the application for production:
+
+```bash
+npm run build
+```
+
+To preview the production build:
+
+```bash
+npm run preview
+```
+
+## Testing
+
+Run unit and integration tests with Vitest:
+
+```bash
+npm run test
+```
+
+For interactive testing with a UI:
+
+```bash
+npm run test:ui
+```
+
+## Links
+
+- [Live Demo](https://lendsqr-fe-test-viney.vercel.app/): Explore the deployed application
+- [Documentation](https://tartan-dew-256.notion.site/Lendsqr-Frontend-Engineering-Assessment-Documentation-136d390eaf4d80c19974eecdd5c6622a): Detailed project documentation
+- [Loom Walkthrough](https://www.loom.com/share/eaf21b43ae6c440ba11b7fb4c7a6de0f?sid=c456a5da-1bdb-4b64-a2a9-328b529ad10c): Video walkthrough of the app's features
+
+## Login Credentials
+
+For demo purposes, use the following login credentials:
+
+- **Username**: lendsqr@outlook.com
+- **Password**: lendsqr123
+
+## Technologies Used
+
+- React and TypeScript: Core framework and type-safe coding
+- Vite: Development server and bundler
+- Zustand: Lightweight state management
+- React Query: Data fetching and caching
+- React Hook Form & Zod: Form handling and validation
+- Vitest: Unit and integration testing
+- Sass: Enhanced styling
+
+## Scripts
+
+- `npm run dev`: Start the development server
+- `npm run build`: Build the app for production
+- `npm run preview`: Preview the production build
+- `npm run lint`: Run linting on the codebase
+- `npm run test`: Execute test suite
+- `npm run test:ui`: Launch interactive testing UI
+- `npm run coverage`: Generate test coverage report
+
+## License
+
+This project is licensed under the MIT License.

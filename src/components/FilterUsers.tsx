@@ -107,7 +107,12 @@ const FilterUsers = () => {
           <img className="filterUsers__icon" src={filter} alt="filter" />
         </Popover.Trigger>
         <Popover.Content>
-          <form className="filterUsers__box" onSubmit={handleSubmit(onSubmit)}>
+          <form
+            className="filterUsers__box"
+            onSubmit={handleSubmit(onSubmit)}
+            role="form"
+            data-testid="filter-form"
+          >
             <div className="filterUsers__box__group">
               <label className="filterUsers__box__group__text">
                 Organization
@@ -122,6 +127,7 @@ const FilterUsers = () => {
                       value: org,
                       label: org,
                     }))}
+                    name="organization"
                   />
                 )}
               />
@@ -211,6 +217,7 @@ const FilterUsers = () => {
                       { value: 'blacklisted', label: 'Blacklisted' },
                       { value: 'pending', label: 'Pending' },
                     ]}
+                    name="status"
                   />
                 )}
               />
@@ -222,6 +229,7 @@ const FilterUsers = () => {
             </div>
             <div className="filterUsers__box__flexWrapper">
               <button
+                role="reset"
                 className="filterUsers__box__flexWrapper__resetButton"
                 onClick={handleReset}
               >

@@ -45,7 +45,11 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
 
   return (
     <div className="header">
-      <RxHamburgerMenu onClick={toggleSidebar} className="header__hamburger" />
+      <RxHamburgerMenu
+        data-testid="hamburger-menu"
+        onClick={toggleSidebar}
+        className="header__hamburger"
+      />
       <div className="header__left">
         <img src={logo} className="header__left__logo" alt="logo" />
         <div className="header__left__searchWrapper">

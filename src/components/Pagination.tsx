@@ -62,6 +62,7 @@ const Pagination: React.FC<PaginationProps> = ({
 
     return pageNumbers.map((page, index) => (
       <span
+        data-testid="pageNumber"
         key={index}
         className={`pagination__controls__text ${
           currentPage === page ? 'active' : ''
@@ -100,6 +101,7 @@ const Pagination: React.FC<PaginationProps> = ({
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
           className="pagination__controls__button"
+          role="button"
         >
           <svg
             width="14"
@@ -121,6 +123,7 @@ const Pagination: React.FC<PaginationProps> = ({
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
           className="pagination__arrow"
+          role="button"
         >
           <svg
             width="14"

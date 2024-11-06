@@ -2,7 +2,6 @@ import '../styles/components/Sidebar.scss';
 import SidebarNavigationTab from './SidebarNavigationTab';
 import SwitchOrganizationOption from './SwitchOrganizationOption';
 import { sidebarConfig } from '../data/sidebarTabs';
-// import { CgClose } from 'react-icons/cg';
 import { IoCloseCircleOutline } from 'react-icons/io5';
 import logo from '../assets/icons/logo-small.svg';
 
@@ -12,10 +11,15 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, closeSidebar }) => (
-  <div className={`sidebar ${isSidebarOpen ? 'sidebar--open' : ''}`}>
+  <div
+    role="navigation"
+    className={`sidebar ${isSidebarOpen ? 'sidebar--open' : ''}`}
+  >
     <div className="sidebar__top">
       <img src={logo} className="sidebar__top__logo" alt="logo" />
       <IoCloseCircleOutline
+        role="button"
+        aria-label="close sidebar"
         className="sidebar__top__close"
         onClick={closeSidebar}
       />

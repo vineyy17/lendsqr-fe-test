@@ -11,6 +11,8 @@
   padding-top: toRem(39);
   padding-bottom: toRem(39);
 
+  position: relative;
+
   @include media('<=tablet') {
     display: none;
   }

@@ -2,6 +2,7 @@
 
 .switchWrapper {
   height: toRem(61);
+  position: relative;
 }
 
 .switch {
@@ -27,5 +28,33 @@
   &__dropdown {
     width: toRem(14);
     height: toRem(14);
+  }
+
+  &__popover {
+    box-sizing: border-box;
+    width: toRem(173);
+    height: fit-content;
+    background-color: $white;
+    border-radius: toRem(4);
+    position: absolute;
+    z-index: 100;
+    padding: toRem(16);
+    padding-bottom: toRem(16);
+    border: toRem(1) solid rgba($accent-dark-blue, 0.04);
+    box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;
+    left: toRem(30);
+    top: toRem(30);
+
+    @include flex_col(toRem(18));
+
+    p {
+      font-family: $font-work-sans;
+      font-size: toRem(16);
+      font-weight: 400;
+      line-height: toRem(18.77);
+      margin-left: toRem(2);
+      color: $primary-dark-blue;
+      cursor: pointer;
+    }
   }
 }

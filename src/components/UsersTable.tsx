@@ -59,7 +59,7 @@ const UsersTable = () => {
 
   if (isLoading)
     return (
-      <div className="usersTable usersTable--loading">
+      <div className="usersTable usersTable--loading" role="status">
         <table className="usersTable__table">
           <Skeleton
             height="40rem"
@@ -74,7 +74,7 @@ const UsersTable = () => {
   if (error) return <p>An error occured while fetching</p>;
 
   return (
-    <div className="usersTableWrapper">
+    <div className="usersTableWrapper" data-testid="users-table">
       <div className="usersTable">
         <table className="usersTable__table">
           <UsersTableHead />

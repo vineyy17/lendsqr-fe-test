@@ -49,7 +49,9 @@ const Users = () => {
 
   return (
     <div className="users">
-      <p className="users__heading">Users</p>
+      <p className="users__heading" role="heading">
+        Users
+      </p>
       <div className="users__stats">
         <UsersStatsCard
           name="Users"

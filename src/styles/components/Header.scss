@@ -20,10 +20,6 @@
     padding-left: toRem(60);
   }
 
-  @include media('<=phone-tab') {
-    overflow-x: scroll;
-  }
-
   &__hamburger {
     display: block;
     position: absolute;
@@ -41,10 +37,6 @@
   &__left {
     @include flex(center, center, toRem(168.2));
 
-    // @include media('<=phone-tab') {
-    //   gap: toRem(50);
-    // }
-
     &__logo {
       width: toRem(144.8);
       height: toRem(30);
@@ -61,7 +53,7 @@
 
       @include media('<=phone-tab') {
         width: toRem(306);
-        margin-left: toRem(20);
+        margin-left: toRem(10);
       }
 
       &__input {
@@ -121,9 +113,125 @@
     }
   }
 
+  &__options {
+    width: toRem(25);
+    height: toRem(25);
+    cursor: pointer;
+    transition: all 0.3 ease-in-out;
+    margin-left: toRem(15);
+
+    &:hover {
+      border-radius: toRem(4);
+      background-color: rgba($accent-dark-blue, 0.06);
+    }
+
+    @include media('>phone-tab') {
+      display: none;
+    }
+  }
+
+  &__mobilePopover {
+    box-sizing: border-box;
+    width: toRem(153);
+    height: fit-content;
+    background-color: $white;
+    border-radius: toRem(4);
+    z-index: 100;
+    padding: toRem(16);
+    padding-bottom: toRem(16);
+    border: toRem(1) solid rgba($accent-dark-blue, 0.04);
+    box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;
+
+    position: absolute;
+    right: toRem(18);
+    top: toRem(80);
+
+    @include flex_col(toRem(10));
+
+    &__profile {
+      @include flex(flex-start, center, toRem(7));
+
+      &__image {
+        width: toRem(20);
+        height: toRem(20);
+        object-fit: cover;
+      }
+
+      &__name {
+        @include flex(flex-start, center, toRem(2));
+
+        &__drop {
+          width: toRem(20);
+          height: toRem(20);
+        }
+
+        &__text {
+          font-family: $font-work-sans;
+          font-size: toRem(13);
+          font-weight: 400;
+          line-height: toRem(16.42);
+          color: $accent-dark-blue;
+          font-family: $font-work-sans;
+        }
+      }
+    }
+
+    &__notification {
+      @include flex(flex-start, center, toRem(7));
+
+      &__icon {
+        width: toRem(20);
+        height: toRem(20);
+        color: $accent-dark-blue;
+      }
+
+      &__text {
+        font-family: $font-work-sans;
+        font-size: toRem(13);
+        font-weight: 400;
+        line-height: toRem(16.42);
+        color: $accent-dark-blue;
+        font-family: $font-work-sans;
+      }
+    }
+
+    &__documentation {
+      font-family: $font-work-sans;
+      font-size: toRem(13);
+      font-weight: 400;
+      line-height: toRem(16.42);
+      color: $accent-dark-blue;
+      font-family: $font-work-sans;
+      text-decoration: underline;
+    }
+
+    &__logout {
+      @include flex(flex-start, center, toRem(7));
+
+      &__icon {
+        width: toRem(20);
+        height: toRem(20);
+        color: $accent-dark-blue;
+      }
+
+      &__text {
+        font-family: $font-work-sans;
+        font-size: toRem(13);
+        font-weight: 400;
+        line-height: toRem(16.42);
+        color: $accent-dark-blue;
+        font-family: $font-work-sans;
+      }
+    }
+  }
+
   &__info {
     @include flex(center, center, toRem(0));
     position: relative;
+
+    @include media('<=phone-tab') {
+      display: none;
+    }
 
     &__docs {
       font-family: $font-roboto;
@@ -180,7 +288,7 @@
 
     &__popover {
       box-sizing: border-box;
-      width: toRem(153);
+      width: toRem(123);
       height: fit-content;
       background-color: $white;
       border-radius: toRem(4);
@@ -190,8 +298,13 @@
       padding-bottom: toRem(16);
       border: toRem(1) solid rgba($accent-dark-blue, 0.04);
       box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;
-      right: toRem(-43.5);
+      right: toRem(0);
       top: toRem(50);
+
+      @include media('<=tablet') {
+        width: toRem(123);
+        right: toRem(0);
+      }
 
       &__flex {
         display: flex;
@@ -213,7 +326,6 @@
           line-height: toRem(16.42);
           text-align: left;
           color: $accent-dark-blue;
-          text-transform: uppercase;
         }
       }
     }

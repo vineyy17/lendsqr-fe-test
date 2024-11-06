@@ -10,6 +10,8 @@ import { useFilterStore } from '../store/filterStore';
 import { useState, ChangeEvent } from 'react';
 import { LuLogOut } from 'react-icons/lu';
 import { useAuth } from '../context/AuthContext';
+import seeMoreIcon from '../assets/icons/see-details.svg';
+import { VscBell } from 'react-icons/vsc';
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -21,6 +23,8 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   const { setFilteredUsers } = useFilterStore();
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [popoverVisible, setPopoverVisible] = useState<boolean>(false);
+  const [mobilePopoverVisible, setMobilePopoverVisible] =
+    useState<boolean>(false);
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
@@ -49,6 +53,10 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
 
   const togglePopover = () => {
     setPopoverVisible((prev) => !prev);
+  };
+
+  const toggleMobilePopover = () => {
+    setMobilePopoverVisible((prev) => !prev);
   };
 
   return (
@@ -108,6 +116,54 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
           </div>
         )}
       </div>
+
+      <img
+        src={seeMoreIcon}
+        alt="options icon"
+        className="header__options"
+        onClick={toggleMobilePopover}
+      />
+
+      {mobilePopoverVisible && (
+        <div className="header__mobilePopover">
+          <p
+            className="header__mobilePopover__documentation"
+            onClick={toggleMobilePopover}
+          >
+            Documentation
+          </p>
+          <div
+            className="header__mobilePopover__profile"
+            onClick={toggleMobilePopover}
+          >
+            <img
+              src={avatar}
+              className="header__mobilePopover__profile__image"
+              alt="profile picture"
+            />
+            <div className="header__mobilePopover__profile__name">
+              <p className="header__mobilePopover__profile__name__text">
+                Adedeji
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="header__mobilePopover__notification"
+            onClick={toggleMobilePopover}
+          >
+            <VscBell className="header__mobilePopover__notification__icon" />
+            <p className="header__mobilePopover__notification__text">
+              Notifications
+            </p>
+          </div>
+
+          <div className="header__mobilePopover__logout" onClick={logout}>
+            <LuLogOut className="header__mobilePopover__logout__icon" />
+            <p className="header__mobilePopover__logout__text">Logout</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -103,9 +103,9 @@ npm run test:ui
 
 ## Links
 
-- [Live Demo](https://lendsqr-fe-test-viney.vercel.app/): Explore the deployed application
-- [Documentation](https://tartan-dew-256.notion.site/Lendsqr-Frontend-Engineering-Assessment-Documentation-136d390eaf4d80c19974eecdd5c6622a): Detailed project documentation
-- [Loom Walkthrough](https://www.loom.com/share/eaf21b43ae6c440ba11b7fb4c7a6de0f?sid=c456a5da-1bdb-4b64-a2a9-328b529ad10c): Video walkthrough of the app's features
+- <a href="https://lendsqr-fe-test-viney.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>: Explore the deployed application
+- <a href="https://tartan-dew-256.notion.site/Lendsqr-Frontend-Engineering-Assessment-Documentation-136d390eaf4d80c19974eecdd5c6622a" target="_blank" rel="noopener noreferrer">Documentation</a>: Detailed project documentation
+- <a href="https://www.loom.com/share/eaf21b43ae6c440ba11b7fb4c7a6622a?sid=c456a5da-1bdb-4b64-a2a9-328b529ad10c" target="_blank" rel="noopener noreferrer">Loom Walkthrough</a>: Video walkthrough of the app's features
 
 ## Login Credentials
 

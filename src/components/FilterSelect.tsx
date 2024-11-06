@@ -25,6 +25,8 @@ const FilterSelect = forwardRef<HTMLSelectElement, FilterSelectProps>(
           value={value}
           onChange={onChange}
           name={name}
+          data-testid={`filter-select-${name}`}
+          aria-label={name}
           {...props}
         >
           <option value="" disabled>

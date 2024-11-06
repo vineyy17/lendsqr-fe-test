@@ -43,15 +43,21 @@ const DateInput = forwardRef<HTMLInputElement, DateInputProps>(
           readOnly
           onClick={toggleDatePicker}
           name={name}
+          data-testid={`filter-date-${name}`}
+          aria-label={placeholder}
         />
         <img
           src={dateIcon}
           className="filterDate__icon"
           alt="date icon"
           onClick={toggleDatePicker}
+          data-testid="date-picker-toggle"
         />
         {isDatePickerOpen && (
-          <div className="filterDate__pickerWrapper">
+          <div
+            className="filterDate__pickerWrapper"
+            data-testid="date-picker-wrapper"
+          >
             <DatePicker
               selected={selectedDate}
               onChange={handleDateChange}
@@ -59,6 +65,7 @@ const DateInput = forwardRef<HTMLInputElement, DateInputProps>(
               className="filterDate__datePicker"
               popperPlacement="bottom-start"
               dateFormat="EEE, MMM dd, yyyy"
+              data-testid="date-picker"
             />
           </div>
         )}

@@ -33,9 +33,7 @@ const LoginForm = () => {
 
   const { errors } = formState;
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
 
   const onSubmit = (data: FormType) => {
     setLoading(true);
@@ -61,6 +59,7 @@ const LoginForm = () => {
     >
       <div className="login__right__wrapper__form__inputWrapper">
         <input
+          data-testid="email-input"
           placeholder="Email"
           className="login__right__wrapper__form__input"
           type="email"
@@ -77,6 +76,7 @@ const LoginForm = () => {
 
       <div className="login__right__wrapper__form__inputWrapper">
         <input
+          data-testid="password-input"
           placeholder="Password"
           className="login__right__wrapper__form__input"
           type={showPassword ? 'text' : 'password'}
@@ -112,17 +112,18 @@ const LoginForm = () => {
       </p>
 
       <button
+        role="button"
         type="submit"
         className="login__right__wrapper__form__button"
         disabled={loading}
       >
         {loading ? (
           <SyncLoader
+            role="loader"
             color="var(--color-white)"
             cssOverride={override}
             size="0.7rem"
             aria-label="Loading Spinner"
-            data-testid="loader"
           />
         ) : (
           'Log In'

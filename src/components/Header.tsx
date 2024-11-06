@@ -8,15 +8,19 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { useUsers } from '../hooks/useUsers';
 import { useFilterStore } from '../store/filterStore';
 import { useState, ChangeEvent } from 'react';
+import { LuLogOut } from 'react-icons/lu';
+import { useAuth } from '../context/AuthContext';
 
 interface HeaderProps {
   toggleSidebar: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
+  const { logout } = useAuth();
   const { users } = useUsers();
   const { setFilteredUsers } = useFilterStore();
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [popoverVisible, setPopoverVisible] = useState<boolean>(false);
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     const query = event.target.value.toLowerCase();
@@ -41,6 +45,10 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
     });
 
     setFilteredUsers(filtered);
+  };
+
+  const togglePopover = () => {
+    setPopoverVisible((prev) => !prev);
   };
 
   return (
@@ -80,14 +88,25 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
           className="header__info__profile"
           alt="profile picture"
         />
+
         <div className="header__info__name">
           <p className="header__info__name__text">Adedeji</p>
           <img
             className="header__info__name__drop"
             src={dropDown}
             alt="dropdown icon"
+            onClick={togglePopover}
           />
         </div>
+
+        {popoverVisible && (
+          <div className="header__info__popover">
+            <div className="header__info__popover__flex" onClick={logout}>
+              <LuLogOut className="header__info__popover__flex__icon" />
+              <p className="header__info__popover__flex__text">Logout</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

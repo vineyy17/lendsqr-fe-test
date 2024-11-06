@@ -123,6 +123,7 @@
 
   &__info {
     @include flex(center, center, toRem(0));
+    position: relative;
 
     &__docs {
       font-family: $font-roboto;
@@ -174,6 +175,46 @@
       &__drop {
         width: toRem(20);
         height: toRem(20);
+      }
+    }
+
+    &__popover {
+      box-sizing: border-box;
+      width: toRem(153);
+      height: fit-content;
+      background-color: $white;
+      border-radius: toRem(4);
+      position: absolute;
+      z-index: 100;
+      padding: toRem(16);
+      padding-bottom: toRem(16);
+      border: toRem(1) solid rgba($accent-dark-blue, 0.04);
+      box-shadow: toRem(3) toRem(5) toRem(20) toRem(0) $header-shadow;
+      right: toRem(-43.5);
+      top: toRem(50);
+
+      &__flex {
+        display: flex;
+        align-items: center;
+        gap: toRem(8);
+        cursor: pointer;
+
+        &__icon {
+          width: toRem(20);
+          height: toRem(20);
+          color: $accent-dark-blue;
+        }
+
+        &__text {
+          margin-top: toRem(2);
+          font-family: $font-work-sans;
+          font-size: toRem(14);
+          font-weight: 500;
+          line-height: toRem(16.42);
+          text-align: left;
+          color: $accent-dark-blue;
+          text-transform: uppercase;
+        }
       }
     }
   }

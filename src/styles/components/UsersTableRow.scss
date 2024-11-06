@@ -60,6 +60,10 @@
 
       @include flex_col(toRem(20));
 
+      @include media('<=phone-tab') {
+        right: toRem(-33.5);
+      }
+
       &__wrapper {
         @include flex(flex-start, center, toRem(8));
         cursor: pointer;

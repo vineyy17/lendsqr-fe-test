@@ -51,6 +51,10 @@
       height: toRem(40);
       @include flex(center, center, toRem(0));
 
+      @include media('<=tablet') {
+        margin-left: toRem(15);
+      }
+
       @include media('<=phone-tab') {
         width: toRem(306);
         margin-left: toRem(10);

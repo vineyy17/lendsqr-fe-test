@@ -1,6 +1,6 @@
 # Lendsqr Frontend Assessment
 
-This project was developed as part of the Lendsqr frontend assessment, showcasing a responsive user interface with essential features for an engaging user experience.
+This project was developed as part of the Lendsqr frontend assessment, highlighting a responsive user interface with key features for an engaging user experience. The main objective is to build a responsive and user-friendly dashboard UI for managing user data, precisely aligned with the provided [Figma Link](https://www.google.com/url?q=https://www.figma.com/file/ZKILoCoIoy1IESdBpq3GNC/Frontend&sa=D&source=editors&ust=1730377588689660&usg=AOvVaw200PHt7RrGOa-p3VjsQAq7).
 
 ## Features
 

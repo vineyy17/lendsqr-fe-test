@@ -2,7 +2,7 @@ import { User } from '../types/userTypes';
 
 export const fetchUsers = async (): Promise<User[]> => {
   const response = await fetch(
-    'https://run.mocky.io/v3/698250a8-d7ff-4c12-95fd-52c78cdc9528',
+    'https://run.mocky.io/v3/3d748058-5435-42f1-b168-4c7c998c4834',
   );
   if (!response.ok) {
     throw new Error('Failed to fetch users');
